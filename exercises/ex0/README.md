@@ -1,26 +1,44 @@
-# Level 1 Heading
+# Getting started
 
-In this exercise, you will...
+Before the main exercises begin, make sure Joule is open and connected to both SAP systems.
 
-## Level 2 Heading
+## What you'll need
 
-After completing these steps you will have....
+- Access to your SAP Fiori Launchpad (provided by your instructor)
+- A browser (Chrome or Edge recommended)
+- Your login credentials for this session's demo tenant
 
-1.	Click here.
-<br>![](/exercises/ex0/images/00_00_0010.png)
+## Open Joule
 
-2.	Insert this code.
-``` abap
- DATA(params) = request->get_form_fields(  ).
- READ TABLE params REFERENCE INTO DATA(param) WITH KEY name = 'cmd'.
-  IF sy-subrc <> 0.
-    response->set_status( i_code = 400
-                     i_reason = 'Bad request').
-    RETURN.
-  ENDIF.
+Look for the sparkle icon (✨) in the top-right corner of your SAP Fiori Launchpad and click it to open the conversation panel. If you're using SAP Build Work Zone, Joule is in the sidebar.
+
+> **Note:** If you can't see the Joule icon, refresh your browser or check with your instructor about your role assignment.
+
+## Confirm your connected systems
+
+Once Joule is open, type:
+
 ```
+What SAP systems do you have access to?
+```
+
+You should see Joule confirm it's connected to:
+- **SAP S/4HANA Public Cloud** for ERP data (procurement, finance, materials)
+- **SAP SuccessFactors** for HR data (employees, headcount, performance)
+
+If either system is missing, let your instructor know before continuing.
+
+## Your demo environment
+
+All exercises use a shared demo tenant. Keep these reference values handy:
+
+| Item | Value |
+|---|---|
+| ERP Tenant | my425005 |
+| HR Tenant | SFSALES011653 |
+| Company Code | 1710 |
+| Demo User | Ben Shervin, Engineering Manager |
 
 ## Summary
 
-Now that you have ... 
-Continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
+Your environment is ready and Joule is connected to both SAP systems. Continue to [Exercise 1 - Say Hello to Joule](../ex1/README.md).
