@@ -1,0 +1,9 @@
+[    1444ms] [WARNING] Error with Feature-Policy header: Some features are specified in both Feature-Policy and Permissions-Policy header: geolocation, microphone, payment. Values defined in Permissions-Policy header will be used. @ :0
+[    7479ms] [WARNING] Error with Feature-Policy header: Some features are specified in both Feature-Policy and Permissions-Policy header: geolocation, microphone, payment. Values defined in Permissions-Policy header will be used. @ :0
+[    8845ms] [WARNING] [DEPRECATED] atomFamily is deprecated and will be removed in v3. Please use the `jotai-family` package instead: https://github.com/jotaijs/jotai-family @ https://cdn.aha.io/assets/vendor-v3-3742bedcffc39c14.js:1
+[    8931ms] [WARNING] Overriding previously registered reactive callback: all-notifications @ https://cdn.aha.io/assets/vendor-v3-3742bedcffc39c14.js:1
+[    9363ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://push-dub-prod4.aha.io/ce/?EIO=3&transport=polling&t=Q4mqrW7&sid=Mfqztbzr3_OTAGDQAACB:0
+[    9363ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://push-dub-prod4.aha.io/ce/?EIO=3&transport=polling&t=Q4mqrW8&sid=Mfqztbzr3_OTAGDQAACB:0
+[    9406ms] [WARNING] WebSocket connection to 'wss://push-dub-prod4.aha.io/ce/?EIO=3&transport=websocket&sid=Mfqztbzr3_OTAGDQAACB' failed: WebSocket is closed before the connection is established. @ https://cdn.aha.io/assets/vendor-v3-3742bedcffc39c14.js:1
+[    9522ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://push-dub-prod4.aha.io/ce/?EIO=3&transport=polling&t=Q4mqrY4&sid=Mfqztbzr3_OTAGDQAACB:0
+[   12331ms] [WARNING] Widget not found @ https://cdn.aha.io/assets/vendor-v3-3742bedcffc39c14.js:1

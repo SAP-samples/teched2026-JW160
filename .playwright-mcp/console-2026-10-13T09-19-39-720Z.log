@@ -1,0 +1,66 @@
+[     257ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/administration/api.js:0
+[     264ms] Unexpected token '<'
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     287ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     288ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     288ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     288ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     423ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jobs/api.js:0
+[     468ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/conversations/api.js:0
+[     480ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/discover/api.js:0
+[     497ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/discover/discover-module.js:0
+[     510ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/extensions/api.js:0
+[     517ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jobs/jobs-module.js:0
+[     550ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/conversations/conversations-module.js:0
+[     559ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/extensions/extensions-module.js:0
+[    1591ms] [WARNING] 10/13/2026, 11:19:41 AM sap.ui.require is not available, skipping UI5 Integration Cards theming  @ https://747238487.eu10.sapdas.cloud.sap/new/components/conversations/chunks/el_components-lJOvhdPH.js:19837
+[    1629ms] [WARNING] [Shell] Failed to load API module for discover, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async Promise.allSettled (index 0)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:10150) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[    1629ms] [WARNING] [Shell] Failed to load API module for administration, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async Promise.allSettled (index 4)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:10150) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[    1879ms] [WARNING] Multiple UI5 Web Components instances detected.
+Loading order (versions before 1.1.0 not listed): 
+Runtime 0 - ver 2.22.0
+Runtime 1 - ver 2.22.1
+
+"Runtime 1 - ver 2.22.1" failed to define 25 tag(s) as they were defined by a runtime of an older version "Runtime 0 - ver 2.22.0": ui5-avatar, ui5-bar, ui5-busy-indicator, ui5-button, ui5-checkbox, ui5-dialog, ui5-drop-indicator, ui5-icon, ui5-illustrated-message, ui5-label, ui5-li-custom, ui5-li-group, ui5-li-group-header, ui5-link, ui5-list, ui5-message-strip, ui5-panel, ui5-popover, ui5-radio-button, ui5-responsive-popover, ui5-switch, ui5-tag, ui5-text, ui5-title, ui5-toast.
+WARNING! If your code uses features of the above web components, unavailable in Runtime 0 - ver 2.22.0, it might not work as expected!
+
+To prevent other runtimes from defining tags that you use, consider using scoping or have third-party libraries use scoping: https://github.com/UI5/webcomponents/blob/main/docs/2-advanced/06-scoping.md. @ https://747238487.eu10.sapdas.cloud.sap/new/components/conversations/icons/sort-ascending-TPnrEzkP.js:203
+[    1945ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/administration/administration-module.js:0
+[    2614ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://747238487.eu10.sapdas.cloud.sap/new/components/discover/discover-module.js:0

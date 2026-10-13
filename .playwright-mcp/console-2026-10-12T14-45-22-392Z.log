@@ -1,0 +1,2 @@
+[       1ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://747238487.eu10.sapdas.cloud.sap/login/callback?authType=ias&code=WiI_T95wf44zA9Bp5eVkaANUbQdT9L2_R7Av7I3U2Js&iss=https%3A%2F%2Fao0bjqu02.accounts.ondemand.com&state=5b325ca0-bfb4-4f9e-82cf-4ab919fa37ee:0
+[      39ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://747238487.eu10.sapdas.cloud.sap/favicon.ico:0

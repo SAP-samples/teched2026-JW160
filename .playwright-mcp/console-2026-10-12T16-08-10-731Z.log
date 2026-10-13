@@ -1,0 +1,75 @@
+[      38ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/administration/api.js:0
+[      42ms] Unexpected token '<'
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[      80ms] [ERROR] Theme [sap_sapphire] not registered for package [@ans-webcomponents/notification-settings-panel] @ https://747238487.eu10.sapdas.cloud.sap/new/assets/Boot-CPj9cBlY.js:43
+[     123ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/skills/api.js:0
+[     193ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/extensions/api.js:0
+[     195ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/jwe/conversations/api.js:0
+[     204ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/jobs/api.js:0
+[     261ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/conversations/api.js:0
+[     624ms] [WARNING] [Shell] Failed to load API module for conversations, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async ee (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9821)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9981) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[     626ms] [WARNING] [Shell] Failed to load API module for skills, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async Promise.allSettled (index 9)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:10150) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[     662ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/build/api.js:0
+[     663ms] [WARNING] [Shell] Failed to load API module for build, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async Promise.allSettled (index 3)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:10150) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[     802ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/discover/api.js:0
+[     802ms] [WARNING] [Shell] Failed to load API module for discover, using fallback TypeError: Cannot read properties of undefined (reading 'createAPI')
+    at o (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:9460)
+    at async Promise.allSettled (index 0)
+    at async Ot (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:10150) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[     819ms] [ERROR] Failed to load configuration: Error: Session expired — redirecting to login
+    at oi (https://747238487.eu10.sapdas.cloud.sap/new/assets/src-M77lXE6q.js:2:10261)
+    at https://747238487.eu10.sapdas.cloud.sap/new/assets/src-M77lXE6q.js:2:10585 @ https://747238487.eu10.sapdas.cloud.sap/new/assets/src-M77lXE6q.js:1
+[     944ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/conversations/conversations-module.js:0
+[    1019ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/skills/skills-module.js:0
+[    1020ms] [ERROR] [Shell] onReady handler error: TypeError: e.apps.getAPI(...)?.addEventListener is not a function
+    at https://747238487.eu10.sapdas.cloud.sap/new/components/spaces/api.js:72:37
+    at Lt (https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3999:13069) @ https://747238487.eu10.sapdas.cloud.sap/new/assets/init-C5CJ2CNw.js:3998
+[    1021ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/discover/discover-module.js:0
+[    1021ms] [ERROR] Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec. @ https://747238487.eu10.sapdas.cloud.sap/new/components/build/build-module.js:0
+[    1108ms] [ERROR] Error: Module conversations-module/components does not export a component named ConversationRoot
+    at https://747238487.eu10.sapdas.cloud.sap/new/assets/src-M77lXE6q.js:2:16954 @ https://747238487.eu10.sapdas.cloud.sap/new/assets/client-BjRgG84H.js:7
+[   19234ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://747238487.authentication.eu10.hana.ondemand.com/conversations:0
+[   24468ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://747238487.authentication.eu10.hana.ondemand.com/new/:0

@@ -1,44 +1,118 @@
 # Getting started
 
-Before the main exercises begin, make sure Joule is open and connected to both SAP systems.
+Before the main exercises begin, make sure Joule is open and connected to all SAP systems.
 
 ## What you'll need
 
-- Access to your SAP Fiori Launchpad (provided by your instructor)
 - A browser (Chrome or Edge recommended)
-- Your login credentials for this session's demo tenant
+- Your personal login credentials for this session (pre-configured on your machine)
 
 ## Open Joule
 
-Look for the sparkle icon (✨) in the top-right corner of your SAP Fiori Launchpad and click it to open the conversation panel. If you're using SAP Build Work Zone, Joule is in the sidebar.
+Navigate directly to the **Joule Work Standalone** application:
 
-> **Note:** If you can't see the Joule icon, refresh your browser or check with your instructor about your role assignment.
+**[https://747238487.eu10.sapdas.cloud.sap/new/conversations](https://747238487.eu10.sapdas.cloud.sap/new/conversations)**
+
+Log in with the credentials already set up on your machine. Each participant has their own dedicated user account.
+
+## Take the product tour
+
+When you open Joule Work for the first time, a guided tour starts automatically. Click **"Show Me Conversations"** to start it.
+
+![Joule Work: welcome screen](images/01-tour-welcome.png)
+
+The tour walks you through three steps:
+
+| Step | What it shows |
+|---|---|
+| 1: Start a Conversation | The main chat input and how to send a message |
+| 2: Create a Space | The **+** menu and the Space mode option |
+| 3: Activate Agentic Thinking | The Agentic Thinking toggle in the **+** menu |
+
+Click **Next** after each step, then **Done** on the last step.
+
+If the tour did not start automatically, you can trigger it manually:
+
+1. Click the **"J0 / JW160 000"** avatar at the **bottom of the left sidebar**.
+2. Select **"Tour"** from the menu.
+
+![User avatar menu with Tour and Explore Skills highlighted](images/02-avatar-menu.png)
+
+## Explore Skills
+
+Skills give Joule its abilities. Each skill connects to a specific SAP system or document type. Before starting the exercises, make sure the skills you need are active.
+
+1. Click the **"J0 / JW160 000"** avatar at the bottom of the left sidebar.
+2. Select **"Explore Skills"** from the menu.
+
+The Explore Skills page lists all available skills as cards. A blue toggle means the skill is active; a gray toggle means it is off.
+
+![Explore Skills: initial view](images/03-skill-explorer-open.png)
+
+### Enable the required skills
+
+Make sure the following skills are turned **on** (blue toggle). Click any gray toggle to activate it.
+
+| Skill card | What it covers |
+|---|---|
+| `s4hana-public-cloud` | SAP S/4HANA Public Cloud: ERP data |
+| `successfactors-hr` | SAP SuccessFactors HCM: employees, org structure |
+| `successfactors-learning` | SAP SuccessFactors Learning: courses, completions |
+| `ariba-buyer` | SAP Ariba Buyer: purchase orders, invoices |
+| `ariba-sourcing` | SAP Ariba Sourcing: RFPs, contracts, suppliers |
+| `sap-knowledge-graph` | Knowledge Graph: cross-system reasoning |
+| `pdf` | PDF Documents: read and query uploaded PDFs |
+| `docx` | Word Documents: read and query uploaded Word files |
+
+When all required skills are on, the page should look like this:
+
+![Required skills enabled](images/05-skills-enabled.png)
+
+> **Tip:** If a toggle is missing or the card is grayed out, you may not have the required system role. Ask your instructor.
+
+Close the tab or click **Conversations** in the left sidebar to return to Joule.
+
+## Enable Agentic Thinking
+
+Agentic Thinking lets Joule act on your behalf, querying live systems, reasoning across steps, and taking action without requiring you to break the task into pieces. **All exercises in this workshop require Agentic Thinking to be active.** Without it, Joule routes prompts through documentation search instead of your connected SAP systems.
+
+**Important:** The Agentic Thinking option only appears in a **new, empty conversation**. If you are in a conversation that already has messages, start a new one first.
+
+To enable it:
+
+1. Make sure you are in a **new conversation** (click **New** in the left sidebar if needed).
+2. In the message input at the bottom, click the **+** (Select Mode) button.
+
+    ![+ menu showing Agentic Thinking and Space options](images/06-agentic-thinking-menu.png)
+
+3. Select **Agentic Thinking**.
+
+    The input bar now shows an **Agentic Thinking** chip. Joule is ready.
+
+    ![Input bar with Agentic Thinking chip active](images/07-agentic-thinking-enabled.png)
+
+> **Note:** The chip stays active for the entire conversation. You only need to set it once per conversation.
 
 ## Confirm your connected systems
 
-Once Joule is open, type:
+Back in the main conversation, type:
 
 ```
 What SAP systems do you have access to?
 ```
 
 You should see Joule confirm it's connected to:
-- **SAP S/4HANA Public Cloud** for ERP data (procurement, finance, materials)
-- **SAP SuccessFactors** for HR data (employees, headcount, performance)
+- **SAP S/4HANA Cloud**: [my441372.s4hana.cloud.sap](https://my441372.s4hana.cloud.sap/ui)
+- **SAP SuccessFactors**: [hcm-eu10-sales.hr.cloud.sap](https://hcm-eu10-sales.hr.cloud.sap/login?company=SFSALES011701)
+- **SAP Ariba Buying**: [747176447-t.procurement-eu.ariba.com](https://747176447-t.procurement-eu.ariba.com)
+- **SAP Ariba Sourcing**: [747176447-t.sourcing-eu.ariba.com](https://747176447-t.sourcing-eu.ariba.com)
 
-If either system is missing, let your instructor know before continuing.
+If any system is missing, let your instructor know before continuing.
 
-## Your demo environment
+## Your environment
 
-All exercises use a shared demo tenant. Keep these reference values handy:
-
-| Item | Value |
-|---|---|
-| ERP Tenant | my425005 |
-| HR Tenant | SFSALES011653 |
-| Company Code | 1710 |
-| Demo User | Ben Shervin, Engineering Manager |
+Each participant machine comes pre-configured with its own user account. No shared credentials are needed. Log in with the account on your machine.
 
 ## Summary
 
-Your environment is ready and Joule is connected to both SAP systems. Continue to [Exercise 1 - Say Hello to Joule](../ex1/README.md).
+Continue to [Exercise 1 - Say Hello to Joule](../ex1/README.md).

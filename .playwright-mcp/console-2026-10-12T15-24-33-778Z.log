@@ -1,0 +1,4 @@
+[   15171ms] [WARNING] 10/12/2026, 5:24:48 PM No sap.ushell.Container found.  @ https://sapit-home-prod-004.eu10.sapdas.cloud.sap/resources/public/webclient/bootstrap.js:1
+[   18628ms] [ERROR] [i18n] Invalid bundling detected - dynamic JSON imports bundled as URLs. Switch to inlining JSON files from the build. Check the "Assets" documentation for more information. @ https://sapit-home-prod-004.eu10.sapdas.cloud.sap/resources/webclient/vendor-ui5.js:1
+[   19000ms] [WARNING] 10/12/2026, 5:24:52 PM sap.ui.require is not available, skipping UI5 Integration Cards theming  @ https://sapit-home-prod-004.eu10.sapdas.cloud.sap/resources/webclient/webclient.js:1
+[   19039ms] [WARNING] 10/12/2026, 5:24:52 PM sap.ui.require is not available, skipping UI5 Integration Cards theming  @ https://sapit-home-prod-004.eu10.sapdas.cloud.sap/resources/webclient/webclient.js:1

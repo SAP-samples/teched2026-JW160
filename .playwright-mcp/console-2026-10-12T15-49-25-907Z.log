@@ -1,0 +1,1 @@
+[ 1175611ms] [ERROR] Failed to load resource: net::ERR_INCOMPLETE_CHUNKED_ENCODING @ http://localhost:8080/api/collect-sse?landscape=EU10_PROD&hours=24&max=50000:0

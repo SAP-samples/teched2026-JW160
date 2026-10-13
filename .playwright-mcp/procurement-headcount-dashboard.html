@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procurement & Team Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a2b3c;
+      min-height: 100vh;
+    }
+
+    /* ── Header ──────────────────────────────────────────────── */
+    .header {
+      background: linear-gradient(135deg, #1F497D 0%, #2e75b6 100%);
+      color: white;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .header-logo {
+      background: white;
+      color: #1F497D;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .header h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.3px; }
+    .header-meta { font-size: 12px; opacity: 0.85; text-align: right; line-height: 1.6; }
+
+    /* ── KPI Strip ───────────────────────────────────────────── */
+    .kpi-strip {
+      display: flex;
+      gap: 16px;
+      padding: 20px 32px 0;
+      flex-wrap: wrap;
+    }
+    .kpi-card {
+      flex: 1 1 180px;
+      background: white;
+      border-radius: 10px;
+      padding: 18px 22px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      border-left: 4px solid #2e75b6;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .kpi-card.green  { border-left-color: #2e8b57; }
+    .kpi-card.orange { border-left-color: #e07b00; }
+    .kpi-card.purple { border-left-color: #7b5ea7; }
+    .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #6b7c93; font-weight: 600; }
+    .kpi-value { font-size: 32px; font-weight: 700; color: #1F497D; line-height: 1.1; }
+    .kpi-card.green  .kpi-value { color: #2e8b57; }
+    .kpi-card.orange .kpi-value { color: #e07b00; }
+    .kpi-card.purple .kpi-value { color: #7b5ea7; }
+    .kpi-sub   { font-size: 12px; color: #8a9bb0; }
+
+    /* ── Main Grid ───────────────────────────────────────────── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px 32px 32px;
+    }
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Panel ───────────────────────────────────────────────── */
+    .panel {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 22px;
+      border-bottom: 1px solid #e8edf3;
+      background: #f7f9fc;
+    }
+    .panel-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+    }
+    .panel-icon.blue   { background: #dbeafe; }
+    .panel-icon.teal   { background: #d1fae5; }
+    .panel-title { font-size: 15px; font-weight: 700; color: #1a2b3c; }
+    .panel-badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .panel-badge.blue   { background: #dbeafe; color: #1e40af; }
+    .panel-badge.green  { background: #d1fae5; color: #065f46; }
+    .panel-body { padding: 20px 22px; }
+
+    /* ── Tabs ────────────────────────────────────────────────── */
+    .tabs { display: flex; gap: 0; border-bottom: 2px solid #e8edf3; margin-bottom: 18px; }
+    .tab {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #6b7c93;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color .2s, border-color .2s;
+    }
+    .tab.active { color: #1F497D; border-bottom-color: #1F497D; }
+
+    /* ── PO Table ────────────────────────────────────────────── */
+    .po-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .po-table th {
+      background: #1F497D;
+      color: white;
+      padding: 9px 12px;
+      text-align: left;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    .po-table td { padding: 9px 12px; border-bottom: 1px solid #f0f4f8; }
+    .po-table tr:last-child td { border-bottom: none; }
+    .po-table tr:nth-child(even) td { background: #f7f9fc; }
+    .po-table tr:hover td { background: #eff6ff; }
+    .status-badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .po-num { font-family: monospace; font-size: 12px; color: #1F497D; font-weight: 700; }
+
+    /* ── Chart wrapper ───────────────────────────────────────── */
+    .chart-wrap { position: relative; height: 210px; margin-bottom: 6px; }
+
+    /* ── Headcount ───────────────────────────────────────────── */
+    .hc-summary {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .hc-tile {
+      flex: 1 1 130px;
+      background: #f7f9fc;
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-align: center;
+      border: 1px solid #e8edf3;
+    }
+    .hc-tile .val { font-size: 26px; font-weight: 800; color: #2e75b6; }
+    .hc-tile .lbl { font-size: 11px; color: #6b7c93; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+    /* ── Team list ───────────────────────────────────────────── */
+    .team-list { max-height: 260px; overflow-y: auto; }
+    .team-list::-webkit-scrollbar { width: 5px; }
+    .team-list::-webkit-scrollbar-thumb { background: #c5d2e0; border-radius: 3px; }
+    .member-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f4f8;
+    }
+    .member-row:last-child { border-bottom: none; }
+    .avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2e75b6, #1F497D);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .member-info .name { font-size: 13px; font-weight: 600; color: #1a2b3c; }
+    .member-info .role { font-size: 11px; color: #6b7c93; }
+    .member-dept {
+      margin-left: auto;
+      font-size: 11px;
+      color: #2e75b6;
+      background: #dbeafe;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    /* ── Info row ────────────────────────────────────────────── */
+    .info-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .info-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #f0f4f8;
+      border: 1px solid #dce4ef;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: #3a5068;
+    }
+    .info-pill span { font-weight: 700; color: #1F497D; }
+
+    /* ── Executive Summary ───────────────────────────────────── */
+    .exec-summary {
+      margin: 20px 32px 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .exec-summary-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      background: linear-gradient(90deg, #1F497D 0%, #2e75b6 100%);
+      color: white;
+    }
+    .exec-summary-header .es-icon {
+      font-size: 18px;
+    }
+    .exec-summary-header .es-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .exec-summary-header .es-date {
+      margin-left: auto;
+      font-size: 11px;
+      opacity: 0.85;
+    }
+    .exec-summary-body {
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .exec-summary-body { grid-template-columns: 1fr; }
+    }
+    .es-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #6b7c93;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .es-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8edf3;
+    }
+    .es-text {
+      font-size: 13px;
+      line-height: 1.75;
+      color: #3a5068;
+    }
+    .es-text strong { color: #1F497D; }
+    .es-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .es-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+    .es-tag.blue   { background: #dbeafe; color: #1e40af; }
+    .es-tag.green  { background: #d1fae5; color: #065f46; }
+    .es-tag.orange { background: #fef3c7; color: #92400e; }
+    .es-tag.purple { background: #ede9fe; color: #5b21b6; }
+    .es-divider {
+      width: 1px;
+      background: #e8edf3;
+      align-self: stretch;
+    }
+    @media (max-width: 900px) { .es-divider { display: none; } }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #8a9bb0;
+      padding: 12px 32px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">SAP</div>
+    <h1>Procurement &amp; Team Dashboard</h1>
+  </div>
+  <div class="header-meta">
+    JW160 000 &nbsp;|&nbsp; Shared Services, Executive Office<br>
+    Corporate – US-Philadelphia &nbsp;|&nbsp; As of 13 October 2026
+  </div>
+</div>
+
+<!-- ── EXECUTIVE SUMMARY ──────────────────────────────────── -->
+<div class="exec-summary">
+  <div class="exec-summary-header">
+    <span class="es-icon">📋</span>
+    <span class="es-title">Zusammenfassung (Executive Summary)</span>
+    <span class="es-date">13. Oktober 2026 &nbsp;·&nbsp; JW160 000, Spezialist — Shared Services</span>
+  </div>
+  <div class="exec-summary-body">
+
+    <!-- Procurement column -->
+    <div>
+      <div class="es-section-title">📦 Beschaffungsaktivität</div>
+      <p class="es-text">
+        In den vergangenen <strong>2 Tagen (12.–13. Oktober 2026)</strong> wurden insgesamt <strong>10 Standard-Bestellungen (NB)</strong>
+        unter Einkaufsorganisation <strong>1710</strong> (Buchungskreis 1710) angelegt, alle in <strong>USD</strong>.
+        Die Bestellungen verteilen sich auf <strong>3 aktive Lieferanten</strong>: USSU-VSF81 hatte mit
+        <strong>4 Bestellungen</strong> den größten Anteil, gefolgt von USSU-VSF85 (<strong>4 Bestellungen</strong>)
+        und USSU-VSF82 (<strong>2 Bestellungen</strong>).
+        Die Aktivität erreichte am <strong>13. Oktober</strong> mit 7 erstellten Bestellungen ihren Höhepunkt,
+        gegenüber 3 am Vortag. Alle 10 Bestellungen befinden sich derzeit im Status <strong>„In Bearbeitung"</strong>,
+        was bedeutet, dass sie an die Lieferanten übermittelt wurden und auf den Wareneingang oder die
+        Rechnungsprüfung warten. Keine Bestellungen sind gesperrt, geschlossen oder abgelehnt.
+      </p>
+      <div class="es-highlight">
+        <span class="es-tag blue">✅ 10 Bestellungen · Alle aktiv</span>
+        <span class="es-tag orange">⏳ 100% In Bearbeitung</span>
+        <span class="es-tag purple">🏭 3 Lieferanten</span>
+        <span class="es-tag blue">💵 USD · Einkaufsorg. 1710</span>
+      </div>
+    </div>
+
+    <div class="es-divider"></div>
+
+    <!-- Headcount column -->
+    <div>
+      <div class="es-section-title">👥 Teamübersicht</div>
+      <p class="es-text">
+        Das Team umfasst derzeit <strong>41 aktive direkt unterstellte Mitarbeiter</strong>, alle mit der
+        Bezeichnung <strong>Spezialist</strong> innerhalb der Abteilung <strong>Shared Services</strong>
+        (Division: Executive Office). Das Team ist an einem einzigen Standort angesiedelt —
+        <strong>Corporate – US-Philadelphia (1710-2001)</strong> — was eine einheitliche, standortgebundene
+        Belegschaft gewährleistet. Der Personalbestand ist zu <strong>100 % aktiv</strong>; es wurden keine
+        inaktiven oder bevorstehenden Kündigungseinträge festgestellt. Das konsolidierte abteilungs- und
+        standortbezogene Profil des Teams fördert eine starke operative Kohäsion und eine effiziente
+        Führungsstruktur. In der aktuellen Datenerfassung sind keine offenen Stellen, Vakanzen
+        oder Versetzungen ausgewiesen.
+      </p>
+      <div class="es-highlight">
+        <span class="es-tag green">👤 41 Aktive Mitarbeiter</span>
+        <span class="es-tag green">🏢 Shared Services</span>
+        <span class="es-tag blue">📍 US-Philadelphia</span>
+        <span class="es-tag purple">💼 Spezialist · 100%</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── KPI STRIP ──────────────────────────────────────────── -->
+<div class="kpi-strip">
+  <div class="kpi-card">
+    <div class="kpi-label">Recent POs</div>
+    <div class="kpi-value">10</div>
+    <div class="kpi-sub">Last 2 days · all USD</div>
+  </div>
+  <div class="kpi-card orange">
+    <div class="kpi-label">Unique Suppliers</div>
+    <div class="kpi-value">3</div>
+    <div class="kpi-sub">VSF81 · VSF82 · VSF85</div>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Team Headcount</div>
+    <div class="kpi-value">41</div>
+    <div class="kpi-sub">Direct reports · active</div>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">PO Status</div>
+    <div class="kpi-value">100%</div>
+    <div class="kpi-sub">In Process</div>
+  </div>
+</div>
+
+<!-- ── MAIN GRID ──────────────────────────────────────────── -->
+<div class="main-grid">
+
+  <!-- ══ LEFT: PURCHASE ORDERS ══════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon blue">📦</div>
+      <div class="panel-title">Purchase Order Activity</div>
+      <div class="panel-badge blue">S/4HANA · Purch. Org. 1710</div>
+    </div>
+    <div class="panel-body">
+
+      <!-- Charts row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#6b7c93;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">POs by Supplier</div>
+          <div class="chart-wrap"><canvas id="supplierChart"></canvas></div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#6b7c93;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">POs by Date</div>
+          <div class="chart-wrap"><canvas id="dateChart"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div style="font-size:12px;font-weight:700;color:#6b7c93;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Recent Orders</div>
+      <div style="overflow-x:auto;">
+        <table class="po-table">
+          <thead>
+            <tr>
+              <th>PO Number</th>
+              <th>PO Date</th>
+              <th>Supplier</th>
+              <th>Type</th>
+              <th>Currency</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="po-num">4500102976</span></td><td>13 Oct 2026</td><td>USSU-VSF81</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102977</span></td><td>13 Oct 2026</td><td>USSU-VSF81</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102978</span></td><td>13 Oct 2026</td><td>USSU-VSF81</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102979</span></td><td>13 Oct 2026</td><td>USSU-VSF81</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102980</span></td><td>13 Oct 2026</td><td>USSU-VSF82</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102981</span></td><td>13 Oct 2026</td><td>USSU-VSF82</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102982</span></td><td>13 Oct 2026</td><td>USSU-VSF85</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102840</span></td><td>12 Oct 2026</td><td>USSU-VSF85</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102841</span></td><td>12 Oct 2026</td><td>USSU-VSF85</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+            <tr><td><span class="po-num">4500102842</span></td><td>12 Oct 2026</td><td>USSU-VSF85</td><td>NB</td><td>USD</td><td><span class="status-badge">In Process</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RIGHT: TEAM HEADCOUNT ══════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon teal">👥</div>
+      <div class="panel-title">Team Headcount</div>
+      <div class="panel-badge green">SuccessFactors · Active</div>
+    </div>
+    <div class="panel-body">
+
+      <!-- Info pills -->
+      <div class="info-row">
+        <div class="info-pill">🏢 <span>Shared Services</span></div>
+        <div class="info-pill">🏛️ <span>Executive Office</span></div>
+        <div class="info-pill">📍 <span>US-Philadelphia</span></div>
+        <div class="info-pill">💼 <span>Specialist</span></div>
+      </div>
+
+      <!-- Headcount tiles -->
+      <div class="hc-summary">
+        <div class="hc-tile">
+          <div class="val">41</div>
+          <div class="lbl">Direct Reports</div>
+        </div>
+        <div class="hc-tile">
+          <div class="val">1</div>
+          <div class="lbl">Department</div>
+        </div>
+        <div class="hc-tile">
+          <div class="val">1</div>
+          <div class="lbl">Location</div>
+        </div>
+        <div class="hc-tile">
+          <div class="val">100%</div>
+          <div class="lbl">Active</div>
+        </div>
+      </div>
+
+      <!-- Headcount chart -->
+      <div style="font-size:12px;font-weight:700;color:#6b7c93;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Headcount by Role</div>
+      <div class="chart-wrap" style="height:150px;margin-bottom:16px;">
+        <canvas id="headcountChart"></canvas>
+      </div>
+
+      <!-- Team list -->
+      <div style="font-size:12px;font-weight:700;color:#6b7c93;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Team Members (showing 15 of 41)</div>
+      <div class="team-list">
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 001</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 002</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 003</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 004</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 005</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 006</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 007</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 008</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 009</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 010</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 011</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 012</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 013</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 014</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+        <div class="member-row"><div class="avatar">JW</div><div class="member-info"><div class="name">JW160 015</div><div class="role">Specialist · Shared Services</div></div><div class="member-dept">Active</div></div>
+      </div>
+      <div style="font-size:11px;color:#8a9bb0;margin-top:8px;text-align:center;">Scroll to see more · 41 total active direct reports</div>
+    </div>
+  </div>
+
+</div><!-- /main-grid -->
+
+<div class="footer">
+  Data sourced live from SAP S/4HANA Public Cloud (Purchase Orders) and SAP SuccessFactors (Headcount) &nbsp;·&nbsp; 13 October 2026 09:35 UTC
+</div>
+
+<script>
+  // ── Shared chart defaults ────────────────────────────────
+  Chart.defaults.font.family = "'Segoe UI', Arial, sans-serif";
+  Chart.defaults.font.size   = 12;
+  Chart.defaults.color       = '#6b7c93';
+
+  const BLUES   = ['#1F497D','#2e75b6','#4a98d4','#7cbde8','#b3d9f5'];
+  const ORANGE  = ['#e07b00','#f0a500','#fcd270'];
+
+  // ── Supplier Donut ───────────────────────────────────────
+  new Chart(document.getElementById('supplierChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['USSU-VSF81', 'USSU-VSF82', 'USSU-VSF85'],
+      datasets: [{ data: [4, 2, 4], backgroundColor: BLUES.slice(0,3), borderWidth: 2, borderColor: '#fff' }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 8, font: { size: 11 } } }
+      },
+      cutout: '62%'
+    }
+  });
+
+  // ── Date Bar ─────────────────────────────────────────────
+  new Chart(document.getElementById('dateChart'), {
+    type: 'bar',
+    data: {
+      labels: ['12 Oct 2026', '13 Oct 2026'],
+      datasets: [{
+        label: 'POs Created',
+        data: [3, 7],
+        backgroundColor: ['#4a98d4','#1F497D'],
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: '#f0f4f8' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+
+  // ── Headcount Horizontal Bar ─────────────────────────────
+  new Chart(document.getElementById('headcountChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Specialist'],
+      datasets: [{
+        label: 'Active Headcount',
+        data: [41],
+        backgroundColor: '#2e8b57',
+        borderRadius: 6,
+        borderSkipped: false,
+        barThickness: 28
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.raw} employees` } }
+      },
+      scales: {
+        x: { beginAtZero: true, max: 50, grid: { color: '#f0f4f8' },
+          ticks: { stepSize: 10 } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+</script>
+</body>
+</html>

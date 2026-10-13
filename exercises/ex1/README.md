@@ -2,6 +2,8 @@
 
 **Duration:** ~8 min | **Level:** Beginner
 
+> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet. Without it, Joule will route prompts through documentation search instead of your live SAP systems.
+
 Before touching any SAP data, spend a few minutes talking to Joule about itself. The goal is to get a feel for how it communicates, what it can and can't do, and how it handles follow-up questions. No SAP knowledge needed.
 
 ## Exercise 1.1 - Ask Joule to introduce itself
@@ -18,7 +20,7 @@ Try these prompts one at a time and read each response before moving on.
     ```
     What SAP systems do you have access to?
     ```
-    You should see Joule confirm its connection to S/4HANA and SuccessFactors.
+    You should see Joule confirm its connection to S/4HANA Public Cloud, SAP Ariba Buyer, SAP Ariba Sourcing, SuccessFactors HCM, and SuccessFactors Learning.
 
 3. Test how Joule explains a business concept:
     ```
@@ -38,7 +40,7 @@ Knowing what Joule *can't* do is just as useful as knowing what it can.
     ```
     How current is the data you show me? When was it last refreshed?
     ```
-    Joule queries your SAP systems live -- there is no nightly batch or data copy.
+    Joule queries your SAP systems live. There is no nightly batch or data copy.
 
 3. Test a quick calculation:
     ```
