@@ -42,11 +42,11 @@ Ask Joule to do cross-system arithmetic:
 For company code 1710, compare the number of active employees (from SuccessFactors) to the number of purchase orders this month (from S/4HANA). What is the PO-per-employee ratio?
 ```
 
-This query timed out in the demo environment. Company 1710 has 2,224 active employees across multiple divisions, and retrieving a current-month PO count for all of them simultaneously exceeded the server's response window.
+Joule queries both systems in parallel and calculates the ratio. For company 1710: **2,224 active employees** (SuccessFactors) and **905 purchase orders** created so far in October 2026 (S/4HANA), giving a **PO-per-employee ratio of 0.41** — roughly 1 PO for every 2.5 employees in the month to date.
 
-> **Note:** This is a demo environment limitation. The query is valid: it asks Joule to retrieve two large datasets at once and compute a ratio. In a production system with tuned API limits, this kind of cross-system aggregation works as expected.
+> **Note:** The PO count reflects orders created from 1 October to the date of the query, not a full month. Joule flags this in its response and projects the end-of-month total at ~1,800 POs (~0.81 per employee) assuming a linear creation pace.
 
-![Joule response showing "Request timed-out" message for the PO-per-employee ratio query](images/04_03_0010.png)
+![Joule response showing cross-system table: 2,224 active employees from SuccessFactors, 905 POs from S/4HANA in October 2026, PO-per-employee ratio of 0.41](images/04_03_0010.png)
 
 ## Exercise 4.4 - Talent and procurement
 
