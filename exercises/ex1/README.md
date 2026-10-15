@@ -16,11 +16,15 @@ Try these prompts one at a time and read each response before moving on.
     ```
     Joule introduces itself and summarises what it can do.
 
+    ![Joule introducing itself as SAP's AI assistant with capability categories: Procurement & Sourcing, ERP & Finance, and HR & Talent](images/01_01_0010.png)
+
 2. Ask about the connected systems:
     ```
     What SAP systems do you have access to?
     ```
     You should see Joule confirm its connection to S/4HANA Public Cloud, SAP Ariba Buyer, SAP Ariba Sourcing, SuccessFactors HCM, and SuccessFactors Learning.
+
+    ![Joule listing connected SAP systems: S/4HANA Public Cloud, Ariba Buyer, Ariba Sourcing, SuccessFactors HCM, and SuccessFactors Learning](images/01_02_0010.png)
 
 3. Test how Joule explains a business concept:
     ```
@@ -47,6 +51,8 @@ Knowing what Joule *can't* do is just as useful as knowing what it can.
     Can you do a quick calculation for me? If we raised 47 POs at an average value of $12,400 each, what is the total spend?
     ```
     Expected answer: **$582,800**
+
+    ![Joule quick calculation result: 47 purchase orders at $12,400 each totals $582,800](images/01_calculation.png)
 
 ## What to look for
 

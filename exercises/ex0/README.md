@@ -29,6 +29,12 @@ The tour walks you through three steps:
 | 2: Create a Space | The **+** menu and the Space mode option |
 | 3: Activate Agentic Thinking | The Agentic Thinking toggle in the **+** menu |
 
+![Tour step 1: Start a Conversation, showing the chat input with Next button](images/01-tour-step1.png)
+
+![Tour step 2: Create a Space, showing the + menu with Space option and Next button](images/01-tour-step2.png)
+
+![Tour step 3: Activate Agentic Thinking, showing the + menu with Agentic Thinking highlighted and Done button](images/01-tour-step3.png)
+
 Click **Next** after each step, then **Done** on the last step.
 
 If the tour did not start automatically, you can trigger it manually:

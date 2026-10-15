@@ -14,7 +14,7 @@ Start with yourself.
     ```
     What is my current job title and cost centre?
     ```
-    Joule identifies the session user (JW160-000) automatically and returns your profile from SuccessFactors: job title **Specialist**, cost centre **US10_M1** (General Administration), department Shared Services (5000018), company 1710 (US), employed since 1 January 2021.
+    Joule identifies your user account automatically and returns your profile from SuccessFactors. The screenshot shows the instructor account (JW160-000) with job title **Specialist** and cost centre **US10_M1**; your result will show your own user ID, job title, and assigned cost centre.
 
     ![Joule response showing user profile: Specialist in cost centre US10_M1, Shared Services, Company 1710](images/03_01_0010.png)
 
@@ -22,7 +22,7 @@ Start with yourself.
     ```
     Who is my manager and who reports to me?
     ```
-    Joule shows your manager (AD162-000, Shared Services, Philadelphia office) and confirms you have no direct reports in this demo environment; the reporting chain isn't fully populated.
+    Joule shows your manager and confirms there are no direct reports in this demo environment; the reporting chain isn't fully populated. The manager in the screenshot (AD162-000) belongs to the instructor account; your account will show your own assigned manager.
 
     ![Joule response showing manager AD162-000 and no direct reports](images/03_01_0020.png)
 

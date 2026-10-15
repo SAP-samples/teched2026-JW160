@@ -38,7 +38,7 @@ Ask Joule to trace a live cross-system path starting from your own employee reco
 Starting from my employee record in SuccessFactors, what is the path to the purchase orders that are linked to my cost centre in S/4HANA?
 ```
 
-Joule executes a 3-hop traversal and returns actual live data at each step:
+Joule executes a 3-hop traversal and returns actual live data at each step. The values below come from the instructor account (JW160-000); your result will show your own user ID and the cost centre assigned to your account.
 
 Step 1: Your employee record (SuccessFactors)
 

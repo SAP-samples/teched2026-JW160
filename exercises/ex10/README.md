@@ -58,7 +58,7 @@ Step 1: Upload the skill
 
 1. Click your user avatar → **Explore Skills**
 2. Click **Import**
-3. Choose the `kpi-health-score/SKILL.md` file provided by your instructor
+3. Choose the `kpi-health-score/SKILL.md` file from the `exercises/ex10/kpi-health-score/` folder (or as provided by your instructor)
 4. Click **Import** to activate it
 
 Step 2: Verify the skill is active
@@ -157,6 +157,19 @@ Share it with the group.
 ## Summary
 
 You've seen how skills work, explored the Skill Explorer, and installed a new skill to extend Joule's capabilities with live SAP data. All 10 exercises are done.
+
+---
+
+## Continue the journey
+
+Want to go deeper on skill creation? The follow-on hands-on session picks up exactly where Track A and B leave off. You'll build a skill from scratch, connect it to a live SAP system, and publish it to your tenant.
+
+**JW260 — Build your first skill in Joule: A developer's guide to skill creation**
+
+| Date | Time |
+|------|------|
+| October 28, 2026 | 10:30 AM CET |
+| October 29, 2026 | 11:30 AM CET |
 
 ---
 

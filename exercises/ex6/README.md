@@ -2,7 +2,7 @@
 
 **Duration:** ~20 min | **Level:** Intermediate
 
-> **Instructor note:** This exercise requires the sample files distributed at the start of the session. Make sure you have `preferred_vendors.xlsx`, a supplier contract PDF, and the two headcount CSVs before you start.
+> **Instructor note:** This exercise requires the sample files distributed at the start of the session. Make sure you have `preferred_vendors.csv`, a supplier contract PDF, and the two headcount CSVs before you start.
 
 > **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. File upload only appears in the `+` menu when Agentic Thinking is active.
 
@@ -16,7 +16,11 @@ Open a new conversation and enable Agentic Thinking via the `+` button. Then cli
 
 ![Empty Joule conversation with + and @ buttons in the input area](images/06_01_0010.png)
 
-Click `+` with Agentic Thinking active to reveal the upload option:
+After enabling Agentic Thinking, the chip appears in the input bar:
+
+![Input bar with Agentic Thinking chip active](images/06_upload_button.png)
+
+Click `+` again to reveal the upload option:
 
 ![+ menu open showing Upload a File or Image, Agentic Thinking, and Space options](images/06_01_0030.png)
 
@@ -24,25 +28,37 @@ After selecting a file, it appears as a card above the text box; you can then ty
 
 ![File card showing preferred_vendors.csv attached in the input area with Agentic Thinking enabled](images/06_01_0050.png)
 
+With the file attached, type your question and send:
+
+![File card attached with the vendor list prompt typed in and ready to send](images/06_01_0060.png)
+
 You can also drag and drop a file directly onto the chat input area.
 
-The `@` button (bottom-left of the input) opens a list of specialised assistants (@Billing Assistant, @Sourcing Assistant, @Supplier Management Assistant, and others). You can activate one to focus Joule on that domain.
+The `@` button (bottom-left of the input) opens a list of specialised assistants. You can activate one to focus Joule on that domain.
+
+![@ menu showing Billing Assistant, Sourcing Assistant, and SAP LeanIX Joule Capabilities options](images/06_assistants_menu.png)
 
 ## Exercise 6.1 - Upload a vendor list
 
-Upload `preferred_vendors.xlsx` via `+` → **Upload a File or Image**, then ask:
+Upload `preferred_vendors.csv` via `+` → **Upload a File or Image**, then ask:
 
 ```
-I've uploaded our vendor list. Summarise it and tell me how many vendors are in each country.
+I've uploaded our vendor list. Summarise it: how many vendors are there, which countries are represented, and what is the total annual spend?
 ```
 
-Joule reads the spreadsheet and returns a country-by-country breakdown of vendor counts. Follow up with a cross-reference against live S/4HANA data:
+Joule reads the file and returns a breakdown of vendor count by country and a spend total. Follow up with a contract expiry check:
+
+```
+Which vendors have contracts expiring in the next 6 months? List their names, contract end dates, and annual spend.
+```
+
+Then cross-reference the uploaded list against live S/4HANA data:
 
 ```
 Which vendors from my uploaded list also exist as suppliers in S/4HANA?
 ```
 
-Joule compares the uploaded file against the live supplier master and returns matches, including any IDs that don't exist in the system.
+Joule compares the uploaded file against the live supplier master and returns matches, flagging any vendor IDs that don't exist in the system.
 
 ## Exercise 6.2 - Upload a PDF contract
 
