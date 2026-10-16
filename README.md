@@ -1,8 +1,8 @@
-# JW160 - Working Smarter with Joule
+# Joule 101: Prompting, agents, skills, and deep reasoning — hands on
 
 ## Description
 
-This repository contains the hands-on material for the SAP TechEd 2026 session **JW160 - Working Smarter with Joule**.
+This repository contains the hands-on material for the SAP TechEd 2026 session **Joule 101: Prompting, agents, skills, and deep reasoning — hands on**.
 
 Across 10 exercises you'll use Joule, SAP's AI assistant, to retrieve live data from SAP S/4HANA and SAP SuccessFactors, generate business documents, analyse uploaded files, combine data across systems, and extend Joule's capabilities with a custom skill. No transaction codes. No menus. Just conversation.
 

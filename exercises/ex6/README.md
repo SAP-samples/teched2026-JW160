@@ -2,7 +2,7 @@
 
 **Duration:** ~20 min | **Level:** Intermediate
 
-> **Instructor note:** This exercise requires the sample files distributed at the start of the session. Make sure you have `preferred_vendors.csv`, a supplier contract PDF, and the two headcount CSVs before you start.
+> **Instructor note:** This exercise uses four sample files included in this repository: `preferred_vendors.csv`, `supplier_contract.pdf` (a supplier contract), `headcount_jan2026.csv`, and `headcount_oct2026.csv`. All four files are in the `exercises/ex6/` folder.
 
 > **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. File upload only appears in the `+` menu when Agentic Thinking is active.
 
@@ -62,7 +62,7 @@ Joule compares the uploaded file against the live supplier master and returns ma
 
 ## Exercise 6.2 - Upload a PDF contract
 
-Upload the supplier contract PDF, then extract key terms:
+Upload `supplier_contract.pdf`, then extract key terms:
 
 ```
 I've uploaded a supplier contract PDF. What are the key payment terms and delivery SLAs?
@@ -78,7 +78,7 @@ Joule reads the PDF and pulls out the relevant sections in plain language, witho
 
 ## Exercise 6.3 - Compare two files
 
-Upload both headcount CSV exports (January and October) in the same conversation, then ask:
+Upload both headcount CSV exports in the same conversation (`headcount_jan2026.csv` and `headcount_oct2026.csv`), then ask:
 
 ```
 Here are two headcount exports from January and October. What changed? Who joined and who left?

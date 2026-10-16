@@ -4,6 +4,24 @@
 
 > **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
 
+> **For this exercise only — disable all skills except `sap-knowledge-graph`.**
+>
+> This lets you see what the Knowledge Graph skill can do on its own, without any of the individual system skills (S/4HANA, SuccessFactors, etc.) active. The queries will still return live data — the Knowledge Graph connects to the underlying systems directly.
+>
+> **Step 1:** Click your user avatar in the bottom-left corner of Joule, then select **Explore Skills**.
+>
+> ![User avatar menu open with Explore Skills option highlighted](images/09_disable_01_avatar_menu.png)
+>
+> **Step 2:** The Explore Skills page shows all your active skills. You will disable every skill **except** `sap-knowledge-graph` — click the blue toggle on each card to turn it grey (off).
+>
+> ![Explore Skills page showing all skills enabled with blue toggles](images/09_disable_02_all_skills.png)
+>
+> **Step 3:** When you are done, only `sap-knowledge-graph` should have a blue toggle. All other cards should be grey.
+>
+> ![Explore Skills page showing only sap-knowledge-graph enabled, all other skills disabled](images/09_disable_03_kg_only.png)
+>
+> **Step 4:** Run the exercises below. When you finish Exercise 9, come back to Explore Skills and re-enable all the skills you turned off.
+
 The SAP Knowledge Graph is a semantic layer that connects data entities across your SAP landscape. Joule uses it to discover relationships you didn't know existed and to answer questions that span multiple systems, without having to name which API to call.
 
 Use this exercise when you don't know where the data lives. Describe what you want and Joule works out the path.

@@ -1,0 +1,49 @@
+Employee_ID,First_Name,Last_Name,Department,Job_Title,Cost_Center,Manager,Hire_Date,Status
+EMP-1001,Sarah,Johnson,Engineering,Senior Software Engineer,US10_RDGEN,Jennifer Chen,2021-03-15,Active
+EMP-1002,Marcus,Thompson,Procurement,Procurement Manager,US10_M5,Denzel Coleman,2019-07-22,Active
+EMP-1003,Emily,Rodriguez,Finance,Senior Financial Analyst,US10_FIN1,Robert Park,2020-11-03,Active
+EMP-1004,Daniel,Kim,HR,HR Business Partner,US10_HR,Patricia Lee,2022-01-17,Active
+EMP-1005,Alexandra,Martin,Marketing,Marketing Specialist,US10_MRKT,James Wilson,2021-06-28,Active
+EMP-1006,Christopher,Davis,Engineering,DevOps Engineer,US10_RDGEN,Jennifer Chen,2020-09-14,Active
+EMP-1007,Jessica,Brown,Sales,Account Executive,US10_SALES,Michael Torres,2022-03-07,Active
+EMP-1008,Ryan,Wilson,Legal,Legal Counsel,US10_LEGAL,Patricia Lee,2019-11-30,Active
+EMP-1009,Lauren,Martinez,Operations,Operations Manager,US10_OPS,David Nguyen,2023-02-14,Active
+EMP-1010,Kevin,Lee,Engineering,QA Engineer,US10_QA,Jennifer Chen,2021-08-23,Active
+EMP-1011,Amanda,Taylor,Finance,Senior Accountant,US10_FIN1,Robert Park,2018-05-11,Active
+EMP-1012,Jordan,Anderson,Procurement,Senior Buyer,US10_M5,Denzel Coleman,2022-07-04,Active
+EMP-1013,Megan,White,HR,Recruiter,US10_HR,Patricia Lee,2023-05-19,Active
+EMP-1014,Ethan,Harris,Engineering,Cloud Architect,US10_CLOUD,Jennifer Chen,2020-04-16,Active
+EMP-1015,Nicole,Clark,Marketing,Brand Manager,US10_MRKT,James Wilson,2019-09-02,Active
+EMP-1016,Brandon,Lewis,IT,Systems Administrator,US10_IT,Karen Adams,2021-11-28,Active
+EMP-1017,Stephanie,Robinson,Finance,Controller,US10_FIN2,Robert Park,2017-06-15,Active
+EMP-1018,Dylan,Walker,Sales,Sales Manager,US10_SALES,Michael Torres,2020-02-24,Active
+EMP-1019,Brittany,Hall,Operations,Supply Chain Analyst,US10_OPS,David Nguyen,2022-09-12,Active
+EMP-1020,Andrew,Allen,Engineering,Data Scientist,US10_DATA,Jennifer Chen,2021-07-07,Active
+EMP-1021,Melissa,Young,Legal,Paralegal,US10_LEGAL,Patricia Lee,2023-01-30,Active
+EMP-1022,Sean,Hernandez,Procurement,Category Manager,US10_M5,Denzel Coleman,2018-11-20,Active
+EMP-1023,Rachel,King,HR,L&D Specialist,US10_HR,Patricia Lee,2022-04-11,Active
+EMP-1024,Tyler,Wright,Engineering,Frontend Developer,US10_FRONT,Jennifer Chen,2021-12-06,Active
+EMP-1025,Heather,Lopez,Marketing,Digital Marketing Manager,US10_MRKT,James Wilson,2020-07-18,Active
+EMP-1026,Gregory,Hill,Finance,Budget Analyst,US10_FIN1,Robert Park,2022-10-03,Active
+EMP-1027,Samantha,Scott,Sales,Inside Sales Rep,US10_SALES,Michael Torres,2023-03-22,Active
+EMP-1028,Patrick,Green,IT,Network Engineer,US10_IT,Karen Adams,2019-08-09,Active
+EMP-1029,Victoria,Adams,Operations,Logistics Coordinator,US10_OPS,David Nguyen,2021-05-14,Active
+EMP-1030,Austin,Baker,Engineering,Backend Developer,US10_BACK,Jennifer Chen,2022-02-28,Active
+EMP-1031,Diana,Gonzalez,HR,HRBP Lead,US10_HR,Patricia Lee,2018-03-17,Active
+EMP-1032,Ian,Nelson,Finance,Treasury Analyst,US10_FIN2,Robert Park,2020-12-01,Active
+EMP-1033,Crystal,Carter,Procurement,Vendor Manager,US10_M5,Denzel Coleman,2019-05-27,Active
+EMP-1034,Justin,Mitchell,Marketing,Product Marketing Manager,US10_MRKT,James Wilson,2021-10-19,Active
+EMP-1035,Vanessa,Perez,Sales,Sales Engineer,US10_SALES,Michael Torres,2022-06-13,Active
+EMP-1036,Nathan,Roberts,IT,Cloud Engineer,US10_IT,Karen Adams,2020-08-31,Active
+EMP-1037,Monica,Turner,Operations,Project Coordinator,US10_OPS,David Nguyen,2023-04-05,Active
+EMP-1038,Kyle,Phillips,Engineering,Security Engineer,US10_SEC,Jennifer Chen,2021-09-17,Active
+EMP-1039,Ashley,Campbell,Finance,AP Specialist,US10_FIN1,Robert Park,2022-11-08,Active
+EMP-1040,Eric,Parker,Procurement,Contracts Specialist,US10_M5,Denzel Coleman,2020-06-22,Active
+EMP-1047,Olivia,Reed,Engineering,Platform Engineer,US10_CLOUD,Jennifer Chen,2026-02-03,Active
+EMP-1048,Mason,Cook,Procurement,Sourcing Analyst,US10_M5,Denzel Coleman,2026-03-17,Active
+EMP-1049,Ava,Morgan,Finance,FP&A Analyst,US10_FIN1,Robert Park,2026-04-28,Active
+EMP-1050,Liam,Bell,HR,HR Coordinator,US10_HR,Patricia Lee,2026-05-12,Active
+EMP-1051,Sophia,Murphy,Engineering,ML Engineer,US10_AI,Jennifer Chen,2026-06-09,Active
+EMP-1052,Noah,Bailey,Sales,Enterprise Account Executive,US10_SALES,Michael Torres,2026-07-21,Active
+EMP-1053,Isabella,Rivera,Marketing,Content Strategist,US10_MRKT,James Wilson,2026-08-04,Active
+EMP-1054,Logan,Cooper,Operations,Process Analyst,US10_OPS,David Nguyen,2026-09-15,Active
