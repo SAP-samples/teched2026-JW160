@@ -18,7 +18,6 @@ By the end of the session, you will have:
 - Explored data relationships through the SAP Knowledge Graph
 - Installed and tested a custom Joule skill
 
-**Total estimated time:** ~3 hours 15 minutes
 
 ## Requirements
 
