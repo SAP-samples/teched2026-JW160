@@ -1,10 +1,10 @@
+---
+name: kpi-health-score
+description: "Pulls live procurement data from S/4HANA and headcount data from SuccessFactors, evaluates both against configurable thresholds, and returns a RAG-coded health scorecard."
+---
+
 # kpi-health-score
-
-## Description
-
-Pulls live procurement data from S/4HANA and headcount data from SuccessFactors, evaluates both against configurable thresholds, and returns a RAG-coded (Red/Amber/Green) health scorecard.
-
-Default company code: 1710. Specify a different code in your prompt if needed.
+Pulls live procurement data from S/4HANA and headcount data from SuccessFactors, evaluates both against configurable thresholds, and returns a RAG-coded health scorecard. Default company code: 1710.
 
 ## Triggers
 
@@ -52,7 +52,7 @@ When someone requests a KPI health check or procurement health score:
 
 2. Retrieve procurement data from S/4HANA for that company code:
    - Total purchase order count from `C_PurchaseOrderTP`
-   - POs with `ProcessingStatus = "C"` (Completed) for the `po_accuracy` numerator
+   - POs with `PurchaseOrderStatus = '05'` (Follow-On Documents Created, i.e. fully processed) for the `po_accuracy` numerator
    - POs where `CreationDate` falls in the current calendar month for `active_po_ratio` numerator
 
 3. Retrieve headcount data from SuccessFactors for the same company code:

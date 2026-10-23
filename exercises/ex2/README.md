@@ -2,6 +2,8 @@
 
 **Duration:** ~18 min | **Level:** Easy
 
+> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+
 In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Public Cloud system across several business areas: purchasing, finance, sales, materials, and suppliers. Watch how Joule picks the right Fiori app or OData service for each question without you having to name one.
 
 ## Exercise 2.1 - Purchase orders

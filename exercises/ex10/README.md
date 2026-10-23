@@ -2,13 +2,25 @@
 
 **Duration:** ~30 min | **Level:** Expert
 
+> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+
 Skills are pre-built capability packs that extend what Joule can do. They connect Joule to additional systems, APIs, and domain knowledge beyond its built-in set. In this final exercise you'll upload a skill, activate it, and test it at the depth that fits your background.
 
 ## Background: what is a skill?
 
 A skill is a configuration file that tells Joule which APIs to call, what data entities are available, how to interpret questions in a specific domain, and how to format results. Think of it as a plug-in: once activated, Joule gains new expertise without any redeployment.
 
-Skill files are `SKILL.md` documents, a markdown format that contains the skill's name, description, triggers, and instructions for Joule. You can import either a single `SKILL.md` file or a folder with `SKILL.md` at the root (with subfolders one level deep for assets).
+Skill files are `SKILL.md` documents: markdown files with a YAML frontmatter block at the top that provides the skill's `name` and `description`, followed by the skill body with triggers and instructions for Joule. You can import either a single `SKILL.md` file or a folder with `SKILL.md` at the root (with subfolders one level deep for assets).
+
+```markdown
+---
+name: my-skill
+description: "What this skill does."
+---
+
+# my-skill
+...
+```
 
 Skill packages are typically provided by:
 
@@ -20,27 +32,27 @@ Skill packages are typically provided by:
 
 Click your user avatar in the bottom-left corner of Joule, then select **Explore Skills** from the menu.
 
-![User menu open showing Explore Skills, Settings, AI Notice, Tour, and About options](images/10_01_0010.png)
+![User menu open showing Explore Skills, Settings, My Apps, AI Notice, Tour, and About options](images/10_01_0010.png)
 
-The Explore Skills page shows all skills installed in your Joule tenant. Skills published by SAP are visible under the **Published by SAP** tab. Your own imported skills appear under **My Skills**. Use the toggle on each card to enable or disable a skill.
+The Explore Skills page shows all skills installed in your Joule tenant. The page has four tabs: **All Skills**, **Published by SAP**, **My Skills**, and **Active Skills**. Skills published by SAP appear under Published by SAP. Your own imported skills appear under My Skills. Use the toggle on each card to enable or disable a skill.
 
-![Explore Skills page showing skill cards for ariba-buyer, ariba-sourcing, docx, pdf, pptx, s4hana-private-cloud, s4hana-public-cloud, sap-knowledge-graph, successfactors-hr, successfactors-learning, and xlsx](images/10_02_0010.png)
+![Explore Skills page showing All Skills tab with ariba-buyer, ariba-sourcing, docx, kpi-health-score (enabled, Custom tag), pdf, and other skills](images/10_02_0010.png)
 
 Click any skill card to read its full description and understand what questions it handles.
 
-![sap-knowledge-graph skill detail showing description, triggers, and supported systems](images/10_04_0010.png)
+![kpi-health-score skill detail page showing Custom tag, Activation Status Enabled, description text, and Skill Preview with triggers](images/10_04_0010.png)
 
 ## How to import a new skill
 
 Click **Import** in the top-right corner of the Explore Skills page.
 
-The **Import Skill** dialog opens. Drag your `SKILL.md` file onto the drop zone, or click **Choose File** to select it from your filesystem. The skill name and description come directly from the file, with no manual entry required.
+The **Import Skill** dialog opens. Drag your `SKILL.md` file onto the drop zone, or click **Choose File** to select it from your filesystem. The skill name and description are pre-filled from the file's YAML frontmatter.
 
 > **Security note:** Custom skills execute in a sandbox environment without external network connectivity.
 
-![Import Skill dialog with drop zone, Choose Folder and Choose File buttons, and security notice](images/10_03_0010.png)
+![Import Skill dialog with Skill Name and Description fields, drop zone, Choose Folder and Choose File buttons, and security notice](images/10_03_0010.png)
 
-Click **Import** to install. The skill appears immediately in your skill list and can be enabled with the toggle.
+Click **Import** to install. The skill appears in your skill list under All Skills. **Important:** the skill toggle is set to off after import. Click the toggle to enable the skill before using it.
 
 ## Choose your track
 
@@ -59,7 +71,8 @@ Step 1: Upload the skill
 1. Click your user avatar → **Explore Skills**
 2. Click **Import**
 3. Choose the `kpi-health-score/SKILL.md` file from the `exercises/ex10/kpi-health-score/` folder (or as provided by your instructor)
-4. Click **Import** to activate it
+4. Click **Import** to install it
+5. Find the **kpi-health-score** card in the All Skills list and click its toggle to **Enable** it
 
 Step 2: Verify the skill is active
 
@@ -69,13 +82,27 @@ What skills do you currently have available?
 
 The KPI Health Score skill should appear in the list.
 
+![Joule response listing all available skills including KPI Health Score under Analytics and Intelligence](images/10_05_0010.png)
+
 Step 3: Test the skill
 
 ```
 What is our procurement health score for company 1710?
 ```
 
-Joule returns a RAG-coded scorecard with live data from S/4HANA and SuccessFactors compared against the configured thresholds.
+Joule returns a RAG-coded scorecard with live data from S/4HANA and SuccessFactors compared against the configured thresholds. Expected results for this tenant:
+
+| KPI | Value | Status |
+|-----|-------|--------|
+| PO Accuracy | ~99% | 🟢 Green |
+| Procurement Savings Rate | — | 🔴 Red (unavailable via standard PO API) |
+| Active PO Ratio | ~2% | 🔴 Red (monthly new POs vs. cumulative base) |
+| Active Employees | ~4,000 | ℹ️ Info |
+| Engineering Managers | ~19 | ℹ️ Info |
+
+> **Note:** The Active PO Ratio appears Red because the threshold (85%) is calibrated for a short window (e.g. weekly new POs) but the metric is calculated against the tenant's full historical PO backlog. Joule's interpretation note explains this. Procurement Savings Rate is unavailable via the standard S/4HANA PO API and requires Ariba sourcing data.
+
+![Joule response showing the RAG-coded KPI Health Scorecard for Company 1710 with PO Accuracy at 99.3% Green, Active PO Ratio at 2.2% Red, and workforce data](images/10_06_0010.png)
 
 Step 4: Adjust a threshold
 
