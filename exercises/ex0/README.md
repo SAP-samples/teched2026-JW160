@@ -21,7 +21,7 @@ Navigate directly to the **Joule Work Standalone** application:
 
 **[https://747238487.eu10.sapdas.cloud.sap/new/conversations](https://747238487.eu10.sapdas.cloud.sap/new/conversations)**
 
-Log in with the credentials already set up on your machine. Each participant has their own dedicated user account.
+Log in with the credentials already set up on your machine or given by your instructor. Each participant has their own dedicated user account.
 
 ## Take the product tour
 
