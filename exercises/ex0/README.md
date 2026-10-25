@@ -77,7 +77,11 @@ Make sure the following skills are turned **on** (blue toggle). Click any gray t
 | `PDF` | PDF: read and query uploaded PDFs |
 | `Word Documents` | Word Documents: read and query uploaded Word files |
 
-When all required skills are on, close the tab or click **Conversations** in the left sidebar to return to Joule.
+When all required skills are on, the page should look like this:
+
+![Required skills enabled](images/05-skills-enabled.png)
+
+Close the tab or click **Conversations** in the left sidebar to return to Joule.
 
 ## Enable Agentic Thinking
 
