@@ -98,8 +98,6 @@ I've uploaded our preferred vendor list. Please do all of this in one go:
 
 Joule runs all five steps autonomously: it pulls the top-10 supplier spend, checks contract coverage, cross-references the uploaded vendor list, looks up the procurement team in SuccessFactors, and generates the Word document — all in one response.
 
-![Joule one-shot response showing the full procurement review result with a Word document download link](images/07_oneshot_0010.png)
-
 **Compare with the guided approach:** The step-by-step version spread the same work across five prompts, letting you verify each data layer before moving to the next. The one-shot version produces the same output in one go but gives you less visibility into how Joule assembled the result.
 
 ## Summary
