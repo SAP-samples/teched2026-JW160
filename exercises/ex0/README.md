@@ -1,6 +1,12 @@
 # Getting started
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!TIP]
+> **Goal:** Joule is open in your browser, Agentic Thinking is enabled, and all required skills and system connections are confirmed.
+>
+> If you've already set up the environment before, jump to [Confirm your connected systems](#confirm-your-connected-systems) to verify you're ready.
+
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
 Before the main exercises begin, make sure Joule is open and connected to all SAP systems.
 
@@ -41,7 +47,7 @@ Click **Next** after each step, then **Done** on the last step.
 
 If the tour did not start automatically, you can trigger it manually:
 
-1. Click the **"J0 / JW160 001"** avatar at the **bottom of the left sidebar**.
+1. Click your **account avatar** at the **bottom of the left sidebar**.
 2. Select **"Tour"** from the menu.
 
 ![User avatar menu with Tour and Explore Skills highlighted](images/02-avatar-menu.png)
@@ -50,7 +56,7 @@ If the tour did not start automatically, you can trigger it manually:
 
 Skills give Joule its abilities. Each skill connects to a specific SAP system or document type. Before starting the exercises, make sure the skills you need are active.
 
-1. Click the **"J0 / JW160 001"** avatar at the bottom of the left sidebar.
+1. Click your **account avatar** at the bottom of the left sidebar.
 2. Select **"Explore Skills"** from the menu.
 
 The Explore Skills page lists all available skills as cards. A blue toggle means the skill is active; a gray toggle means it is off.
@@ -63,19 +69,17 @@ Make sure the following skills are turned **on** (blue toggle). Click any gray t
 
 | Skill card | What it covers |
 |---|---|
-| `s4hana-public-cloud` | SAP S/4HANA Public Cloud: ERP data |
-| `successfactors-hr` | SAP SuccessFactors HCM: employees, org structure |
-| `successfactors-learning` | SAP SuccessFactors Learning: courses, completions |
-| `ariba-buyer` | SAP Ariba Buyer: purchase orders, invoices |
-| `ariba-sourcing` | SAP Ariba Sourcing: RFPs, contracts, suppliers |
-| `pdf` | PDF Documents: read and query uploaded PDFs |
-| `docx` | Word Documents: read and query uploaded Word files |
+| `SAP S/4HANA Cloud Public Edition` | SAP S/4HANA Cloud Public Edition: ERP data |
+| `SAP SuccessFactors HCM` | SAP SuccessFactors HCM: employees, org structure |
+| `SAP SuccessFactors Learning` | SAP SuccessFactors Learning: courses, completions |
+| `SAP Ariba Buying` | SAP Ariba Buying: purchase orders, invoices |
+| `SAP Ariba Sourcing` | SAP Ariba Sourcing: RFPs, contracts, suppliers |
+| `PDF` | PDF: read and query uploaded PDFs |
+| `Word Documents` | Word Documents: read and query uploaded Word files |
 
 When all required skills are on, the page should look like this:
 
 ![Required skills enabled](images/05-skills-enabled.png)
-
-> **Tip:** If a toggle is missing or the card is grayed out, you may not have the required system role. Ask your instructor.
 
 Close the tab or click **Conversations** in the left sidebar to return to Joule.
 
@@ -98,7 +102,8 @@ To enable it:
 
     ![Input bar with Agentic Thinking chip active](images/07-agentic-thinking-enabled.png)
 
-> **Note:** The chip stays active for the entire conversation. You only need to set it once per conversation.
+> [!NOTE]
+> The chip stays active for the entire conversation. You only need to set it once per conversation.
 
 ## Confirm your connected systems
 
@@ -108,13 +113,7 @@ Back in the main conversation, type:
 What SAP systems do you have access to?
 ```
 
-You should see Joule confirm it's connected to:
-- **SAP S/4HANA Cloud**: [my441372.s4hana.cloud.sap](https://my441372.s4hana.cloud.sap/ui)
-- **SAP SuccessFactors**: [hcm-eu10-sales.hr.cloud.sap](https://hcm-eu10-sales.hr.cloud.sap/login?company=SFSALES011701)
-- **SAP Ariba Buying**: [747176447-t.procurement-eu.ariba.com](https://747176447-t.procurement-eu.ariba.com)
-- **SAP Ariba Sourcing**: [747176447-t.sourcing-eu.ariba.com](https://747176447-t.sourcing-eu.ariba.com)
-
-If any system is missing, let your instructor know before continuing.
+Joule lists the SAP systems it is connected to. Confirm that S/4HANA and SuccessFactors appear. If any expected system is missing, let your instructor know before continuing.
 
 ## Your environment
 

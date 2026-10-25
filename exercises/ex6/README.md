@@ -2,11 +2,19 @@
 
 **Duration:** ~20 min | **Level:** Intermediate
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!TIP]
+> **Goal:** You've analysed uploaded files (a spreadsheet, a PDF contract, and two data exports) and combined them with live S/4HANA supplier data in a single conversation.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
 
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+
+> [!NOTE]
 > **Instructor note:** This exercise uses four sample files included in this repository: `preferred_vendors.csv`, `supplier_contract.pdf` (a supplier contract), `headcount_jan2026.csv`, and `headcount_oct2026.csv`. All four files are in the `exercises/ex6/` folder.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. File upload only appears in the `+` menu when Agentic Thinking is active.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. File upload only appears in the `+` menu when Agentic Thinking is active.
 
 Joule isn't limited to SAP system data. You can upload your own files and ask it to interpret, summarise, cross-reference, or compare them against live SAP data.
 
@@ -57,10 +65,13 @@ Which vendors have contracts expiring in the next 6 months? List their names, co
 Then cross-reference the uploaded list against live S/4HANA data:
 
 ```
-Which vendors from my uploaded list also exist as suppliers in S/4HANA?
+Pull the supplier list from S/4HANA. Which entries match our uploaded vendor list?
 ```
 
-Joule searches the S/4HANA supplier master (920 active records) for each of the 30 vendors in the uploaded file and returns 0 matches. The reason: the commercial names in the CSV (e.g. "KoreanElectronics Ltd", "TechSource Inc") don't match the legal entity names stored in S/4HANA, or the vendors aren't formally onboarded in the ERP system. Joule explains the mismatch and suggests alternative approaches: search by SAP Vendor Number, search by country, or onboard the missing vendors directly.
+Joule queries the S/4HANA Business Partner master to retrieve the supplier list and cross-references it against the uploaded CSV. Where commercial names in the file don't match legal entity names in S/4HANA, Joule flags the discrepancies and suggests next steps: search by SAP Vendor Number, filter by country, or onboard missing vendors directly.
+
+> [!NOTE]
+> The supplier cross-reference uses the S/4HANA Business Partner master data API. In some workshop environments this API may not be available. If Joule reports it cannot retrieve the supplier list, that is expected — the other sub-exercises will still work. Ask your instructor if you're unsure.
 
 ## Exercise 6.2 - Upload a PDF contract
 
@@ -70,9 +81,9 @@ Upload `supplier_contract.pdf`, then extract key terms:
 I've uploaded a supplier contract PDF. What are the key payment terms and delivery SLAs?
 ```
 
-Joule reads the PDF and returns a structured breakdown. For `supplier_contract.pdf` (Global Supply GmbH, CTR-2024-002, €1,875,000/year): **Payment:** net 45 days, 1.5% discount if paid within 10 days, invoices must reference PO number and contract CTR-2024-002. **Delivery:** 12 business days standard, 5 days expedited at +15% surcharge, shipping notification required within 24 hours of dispatch, delivery to Walldorf Logistics Centre Gate 7.
+Joule reads the PDF and returns a structured breakdown of the payment terms and delivery SLAs found in the document — including standard payment windows, early payment discounts, delivery lead times, and any special requirements.
 
-![Joule response showing payment terms and delivery SLAs for supplier_contract.pdf](images/06_02_0010.png)
+![Joule response showing payment terms and delivery SLAs extracted from the uploaded contract](images/06_02_0010.png)
 
 Follow up with a specific question:
 
@@ -80,9 +91,9 @@ Follow up with a specific question:
 Does the contract mention a penalty clause? What is it?
 ```
 
-Joule pulls out Section 4 — Penalty Clause and Remedies: 2% of the affected PO value per calendar week of delay (or any part of a week), capped at 10% of the total PO value after 5 weeks. If the delay exceeds 4 weeks, the Buyer may cancel the affected PO without liability and re-source at Supplier's cost. The Supplier must notify the Buyer in writing within 48 hours of becoming aware of any delivery risk; early notification reduces but does not eliminate penalty exposure.
+Joule identifies the penalty clause section and explains the delay penalty structure, cancellation rights, and any early warning obligations defined in the contract.
 
-![Joule response showing penalty clause Section 4 with delay/penalty table and practical impact note](images/06_02_0020.png)
+![Joule response showing the penalty clause section with delay rates and cancellation terms](images/06_02_0020.png)
 
 ## Exercise 6.3 - Compare two files
 
@@ -92,17 +103,36 @@ Upload the two headcount CSV exports in the same conversation. The app accepts o
 Here are two headcount exports from January and October. What changed? Who joined and who left?
 ```
 
-Joule reads both files from the conversation context and produces a full diff. For this dataset (46 employees in January, 48 in October), it returns:
-
-- **Summary table:** 46 → 48 total headcount (+2 net), 8 joiners, 6 leavers, 3 promotions
-- **Joiners (8):** Olivia Reed (Engineering, Platform Engineer, Feb), Mason Cook (Procurement, Sourcing Analyst, Mar), Ava Morgan (Finance, FP&A Analyst, Apr), Liam Bell (HR, HR Coordinator, May), Sophia Murphy (Engineering, ML Engineer, Jun), Noah Bailey (Sales, Enterprise Account Executive, Jul), Isabella Rivera (Marketing, Content Strategist, Aug), Logan Cooper (Operations, Process Analyst, Sep)
-- **Leavers (6):** Derek Collins (Engineering, Mobile Developer), Tiffany Evans (Marketing, Events Manager), Cynthia Morris (Finance, Senior Financial Analyst), Travis Rogers (IT, Database Administrator), Blake Sanchez (Sales, Territory Manager), Jenna Stewart (HR, Compensation Analyst)
-- **Promotions (3):** Jordan Anderson (Procurement, Buyer → Senior Buyer), Emily Rodriguez (Finance, Financial Analyst → Senior Financial Analyst), Lauren Martinez (Operations, Operations Analyst → Operations Manager)
-- **Department shifts:** Engineering +1, Operations +1, Procurement +1, IT −1; Finance/HR/Marketing/Sales/Legal unchanged
-
-Joule also connected the headcount changes to the earlier vendor list work in the same conversation, noting that the procurement team is now well-staffed to handle the five expiring contracts flagged in exercise 6.1.
+Joule reads both files from the conversation context and produces a full diff: a summary table with total headcount change, joiners, leavers, and promotions, followed by detailed lists for each category with names, departments, and roles.
 
 ![Joule response showing headcount comparison summary table and joiners list](images/06_03_0020.png)
+
+## One-shot: all three sub-exercises in a single run
+
+The three sub-exercises above each use a separate file. You can run them all in one conversation by uploading each file in sequence and ending with a single compound prompt.
+
+1. Open a new conversation with Agentic Thinking enabled.
+2. Upload `preferred_vendors.csv` — type `First file: our vendor list.` and send.
+3. Upload `supplier_contract.pdf` — type `Second file: a supplier contract.` and send.
+4. Upload `headcount_jan2026.csv` — type `Third file: January 2026 headcount.` and send.
+5. Upload `headcount_oct2026.csv`, then send this compound prompt:
+
+```
+I've uploaded four files. Please analyse them all:
+1. Vendor list: how many vendors, which countries, total annual spend, and which contracts expire in the next 6 months?
+2. Cross-reference the vendor list against S/4HANA — which entries match?
+3. Contract PDF: what are the key payment terms, delivery SLAs, and penalty clause?
+4. Headcount exports: what changed between January and October? Who joined and who left?
+```
+
+> [!NOTE]
+> Question 2 (S/4HANA cross-reference) uses the Business Partner master data API. In some workshop environments this API may not be available — if so, Joule will note the gap and continue with the other three analyses. See the note in Exercise 6.1 above.
+
+Joule reads all four files from the conversation context and returns analyses for all four questions in a single response. Questions 1, 3, and 4 draw entirely from the uploaded files and will always return results.
+
+![Joule one-shot response covering all four file analyses in a single answer](images/06_oneshot_0010.png)
+
+**Compare with the guided approach:** The sub-exercises above let you inspect each result before moving on. The one-shot version produces all four analyses in one pass — useful for a quick overview, less useful when you want to verify each step.
 
 ## What Joule does with an uploaded file
 
