@@ -2,6 +2,11 @@
 
 **Duration:** ~20 min | **Level:** Intermediate
 
+> [!TIP]
+> **Goal:** You've analysed uploaded files (a spreadsheet, a PDF contract, and two data exports) and combined them with live S/4HANA supplier data in a single conversation.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
@@ -60,10 +65,13 @@ Which vendors have contracts expiring in the next 6 months? List their names, co
 Then cross-reference the uploaded list against live S/4HANA data:
 
 ```
-Which vendors from my uploaded list also exist as suppliers in S/4HANA?
+Pull the supplier list from S/4HANA. Which entries match our uploaded vendor list?
 ```
 
-Joule searches the S/4HANA supplier master for each vendor in the uploaded file. If the commercial names in the CSV don't match the legal entity names stored in S/4HANA — or the vendors aren't formally onboarded in the ERP — Joule flags the mismatch and suggests alternative approaches: search by SAP Vendor Number, search by country, or onboard the missing vendors directly.
+Joule queries the S/4HANA Business Partner master to retrieve the supplier list and cross-references it against the uploaded CSV. Where commercial names in the file don't match legal entity names in S/4HANA, Joule flags the discrepancies and suggests next steps: search by SAP Vendor Number, filter by country, or onboard missing vendors directly.
+
+> [!NOTE]
+> The supplier cross-reference uses the S/4HANA Business Partner master data API. In some workshop environments this API may not be available. If Joule reports it cannot retrieve the supplier list, that is expected — the other sub-exercises will still work. Ask your instructor if you're unsure.
 
 ## Exercise 6.2 - Upload a PDF contract
 
@@ -98,6 +106,33 @@ Here are two headcount exports from January and October. What changed? Who joine
 Joule reads both files from the conversation context and produces a full diff: a summary table with total headcount change, joiners, leavers, and promotions, followed by detailed lists for each category with names, departments, and roles.
 
 ![Joule response showing headcount comparison summary table and joiners list](images/06_03_0020.png)
+
+## One-shot: all three sub-exercises in a single run
+
+The three sub-exercises above each use a separate file. You can run them all in one conversation by uploading each file in sequence and ending with a single compound prompt.
+
+1. Open a new conversation with Agentic Thinking enabled.
+2. Upload `preferred_vendors.csv` — type `First file: our vendor list.` and send.
+3. Upload `supplier_contract.pdf` — type `Second file: a supplier contract.` and send.
+4. Upload `headcount_jan2026.csv` — type `Third file: January 2026 headcount.` and send.
+5. Upload `headcount_oct2026.csv`, then send this compound prompt:
+
+```
+I've uploaded four files. Please analyse them all:
+1. Vendor list: how many vendors, which countries, total annual spend, and which contracts expire in the next 6 months?
+2. Cross-reference the vendor list against S/4HANA — which entries match?
+3. Contract PDF: what are the key payment terms, delivery SLAs, and penalty clause?
+4. Headcount exports: what changed between January and October? Who joined and who left?
+```
+
+> [!NOTE]
+> Question 2 (S/4HANA cross-reference) uses the Business Partner master data API. In some workshop environments this API may not be available — if so, Joule will note the gap and continue with the other three analyses. See the note in Exercise 6.1 above.
+
+Joule reads all four files from the conversation context and returns analyses for all four questions in a single response. Questions 1, 3, and 4 draw entirely from the uploaded files and will always return results.
+
+![Joule one-shot response covering all four file analyses in a single answer](images/06_oneshot_0010.png)
+
+**Compare with the guided approach:** The sub-exercises above let you inspect each result before moving on. The one-shot version produces all four analyses in one pass — useful for a quick overview, less useful when you want to verify each step.
 
 ## What Joule does with an uploaded file
 

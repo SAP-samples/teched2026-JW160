@@ -2,6 +2,11 @@
 
 **Duration:** ~25 min | **Level:** Intermediate
 
+> [!TIP]
+> **Goal:** You've combined procurement and HR data from S/4HANA and SuccessFactors in a single conversation to get a view that neither system provides alone.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 

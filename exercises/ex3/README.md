@@ -2,6 +2,11 @@
 
 **Duration:** ~18 min | **Level:** Easy
 
+> [!TIP]
+> **Goal:** You've pulled HR data across headcount, performance reviews, time off, and recruiting from a live SuccessFactors system.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 

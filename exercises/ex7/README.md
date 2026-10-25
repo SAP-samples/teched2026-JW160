@@ -2,6 +2,11 @@
 
 **Duration:** ~30 min | **Level:** Advanced
 
+> [!TIP]
+> **Goal:** You've run a complete quarterly procurement review across two SAP systems, an uploaded file, and a generated Word document — all through conversation.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
@@ -30,13 +35,10 @@ Joule queries S/4HANA purchase orders for the current quarter and returns a rank
 ## Step 2 - Check contracts for each supplier
 
 ```
-For each of those suppliers, show me if we have an active contract.
+Show me all active purchase contracts in S/4HANA. Which of our top 10 suppliers are covered?
 ```
 
-> [!NOTE]
-> Allow 10–15 minutes for this step. Joule checks each supplier individually against S/4HANA purchase contracts (and SAP Ariba strategic contracts, if connected). With 10 suppliers to check, this takes longer than the other steps.
-
-Joule adds a contract status column to the supplier list. If none of the high-spend suppliers have active contracts, Joule flags this as a risk finding and summarises how much spend is going through without contract coverage. It may also suggest checking additional systems for contracts not yet visible in S/4HANA.
+Joule fetches the full list of active purchase contracts from S/4HANA in a single query, then cross-references that list against the top 10 suppliers from Step 1. If none of the high-spend suppliers appear in the contract list, Joule flags this as a risk finding and summarises how much spend is going through without contract coverage.
 
 ![Joule response showing contract coverage status for each top 10 supplier with a risk summary](images/07_02_0010.png)
 
@@ -80,6 +82,25 @@ Click the document link in Joule's response to download the file.
 - Each step adds a new data layer: S/4HANA, contract records, an uploaded file, SAP SuccessFactors HCM, and a generated document.
 - The Word document draws on everything in the conversation, not just the last prompt.
 - The combined risk pattern emerged from combining three separate data sources. No single step would have revealed it on its own.
+
+## One-shot: the full review in a single prompt
+
+Upload `preferred_vendors.csv` from the `exercises/ex6/` folder using `+` → **Upload a File or Image**, then send this compound prompt:
+
+```
+I've uploaded our preferred vendor list. Please do all of this in one go:
+1. Pull the top 10 suppliers by PO spend this quarter from S/4HANA.
+2. Check which of them have active purchase contracts.
+3. Cross-reference the top 10 against the uploaded preferred vendor list.
+4. Look in SuccessFactors for the procurement team responsible for these suppliers.
+5. Create a Word document summarising all findings as a quarterly supplier spend review.
+```
+
+Joule runs all five steps autonomously: it pulls the top-10 supplier spend, checks contract coverage, cross-references the uploaded vendor list, looks up the procurement team in SuccessFactors, and generates the Word document — all in one response.
+
+![Joule one-shot response showing the full procurement review result with a Word document download link](images/07_oneshot_0010.png)
+
+**Compare with the guided approach:** The step-by-step version spread the same work across five prompts, letting you verify each data layer before moving to the next. The one-shot version produces the same output in one go but gives you less visibility into how Joule assembled the result.
 
 ## Summary
 

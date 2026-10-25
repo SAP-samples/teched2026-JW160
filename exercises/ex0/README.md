@@ -1,5 +1,10 @@
 # Getting started
 
+> [!TIP]
+> **Goal:** Joule is open in your browser, Agentic Thinking is enabled, and all required skills and system connections are confirmed.
+>
+> If you've already set up the environment before, jump to [Confirm your connected systems](#confirm-your-connected-systems) to verify you're ready.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 

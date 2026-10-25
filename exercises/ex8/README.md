@@ -2,6 +2,11 @@
 
 **Duration:** ~25 min | **Level:** Advanced
 
+> [!TIP]
+> **Goal:** You've built an HTML dashboard combining live SAP data with web-sourced industry benchmarks, then exported it as a PDF.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
@@ -35,7 +40,7 @@ Now compare our company's procurement activity from S/4HANA to those benchmarks.
 Joule queries S/4HANA and returns live figures for procurement KPIs, comparing each against the benchmarks from Step 1. The comparison shows where your company is in each benchmark tier, flags any gaps, and includes recommendations on which levers to prioritise.
 
 > [!NOTE]
-> Some KPIs (such as procurement savings rate) may not be measurable if S/4HANA price variance analytics haven't been activated. Joule will flag this and use available signals as a proxy.
+> Some KPIs (such as procurement savings rate) may not be measurable if price variance analytics are not configured in your S/4HANA system. Joule will flag any gaps and use available signals as a proxy.
 
 ![Joule response showing procurement KPI comparison against industry benchmarks with a summary table and recommended actions](images/08_02_0010.png)
 

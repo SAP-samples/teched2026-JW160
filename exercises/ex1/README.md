@@ -2,6 +2,11 @@
 
 **Duration:** ~8 min | **Level:** Beginner
 
+> [!TIP]
+> **Goal:** You've seen what Joule knows, what it admits it can't do, and how to read its responses — without any SAP-specific knowledge.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 

@@ -2,6 +2,11 @@
 
 **Duration:** ~20 min | **Level:** Advanced
 
+> [!TIP]
+> **Goal:** You've discovered where data lives and navigated cross-system relationships using the Knowledge Graph, without needing to know the technical names in advance.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 

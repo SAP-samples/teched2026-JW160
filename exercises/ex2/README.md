@@ -2,13 +2,18 @@
 
 **Duration:** ~18 min | **Level:** Easy
 
+> [!TIP]
+> **Goal:** You've retrieved purchase orders, cost centres, finance data, and a supplier profile from a live S/4HANA system.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
 In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Cloud Public Edition system across several business areas: purchasing, finance, sales, materials, and suppliers. Watch how Joule picks the right Fiori app or OData service for each question without you having to name one.
 
 > [!IMPORTANT]
-> Open **Explore Skills** and confirm that only **SAP S/4HANA Cloud Public Edition** is enabled. If you also see an **SAP S/4HANA Cloud Private Edition** skill, disable it — no private cloud system is connected in this workshop tenant and leaving it enabled can cause routing errors or unexpected failures.
+> Open **Explore Skills** and confirm that only **SAP S/4HANA Cloud Public Edition** is enabled. If you also see an **SAP S/4HANA Cloud Private Edition** skill, disable it — no private cloud system is connected in this workshop and leaving it enabled can cause Joule to query the wrong backend.
 
 ## Exercise 2.1 - Purchase orders
 
@@ -27,7 +32,7 @@ In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Cloud Pub
     Joule filters to the current month in the specified company code and returns a summary of matching purchase orders.
 
     > [!NOTE]
-    > Asking across all company codes and all time periods can return a very large dataset and take several minutes. Scoping to a company code and date range keeps the response fast.
+    > Asking across all company codes and all time periods can return a very large dataset. Scoping to a company code and date range keeps the response fast.
 
 3. Drill into a specific PO:
     ```
@@ -54,7 +59,7 @@ In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Cloud Pub
     Joule returns the total count and a breakdown by company code — useful for understanding the scale of the cost centre hierarchy without listing every record.
 
     > [!NOTE]
-    > Asking Joule to *list* all cost centres in a large controlling area can return hundreds of records and take several minutes. Asking for a count or summary instead returns the same insight in seconds.
+    > Asking Joule to *list* all cost centres in a large controlling area can return hundreds of records. Asking for a count or summary instead returns the same insight in seconds.
 
 ## Exercise 2.3 - Finance, sales, and materials
 

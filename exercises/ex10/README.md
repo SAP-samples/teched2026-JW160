@@ -2,6 +2,11 @@
 
 **Duration:** ~30 min | **Level:** Expert
 
+> [!TIP]
+> **Goal:** You've imported a custom Joule skill, activated it, and tested it end-to-end.
+>
+> If you want to try it yourself first, open a new Joule conversation and see how far you get. The step-by-step guide below is there when you need it.
+
 > [!NOTE]
 > Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
@@ -142,7 +147,7 @@ Build the KPI engine as a microservice and connect it to Joule via the A2A (Agen
 **Step 3: Register with Joule.** Register the agent via the A2A protocol and publish an Agent Card.
 
 > [!IMPORTANT]
-> Your Joule instance must be on schema version >= 3.28.0 for A2A support. Run `joule status` to confirm before you start.
+> Your Joule instance must be on schema version >= 3.28.0 for A2A support. Check the version in Joule's user menu → **About** before you start.
 
 **Step 4: Test end-to-end.**
 
