@@ -26,7 +26,7 @@ thresholds:
     description: Completed POs as a share of all POs in the period
     unit: ratio
     green: "> 0.98"
-    amber: ">= 0.98"    # Track A: change this to 0.96
+    amber: ">= 0.96"
     red: "< 0.98"
   savings_rate:
     label: Procurement Savings Rate

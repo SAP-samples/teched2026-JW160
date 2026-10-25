@@ -75,8 +75,6 @@ When all required skills are on, the page should look like this:
 
 ![Required skills enabled](images/05-skills-enabled.png)
 
-> **Tip:** If a toggle is missing or the card is grayed out, you may not have the required system role. Ask your instructor.
-
 Close the tab or click **Conversations** in the left sidebar to return to Joule.
 
 ## Enable Agentic Thinking
@@ -108,13 +106,7 @@ Back in the main conversation, type:
 What SAP systems do you have access to?
 ```
 
-You should see Joule confirm it's connected to:
-- **SAP S/4HANA Cloud**: [my441372.s4hana.cloud.sap](https://my441372.s4hana.cloud.sap/ui)
-- **SAP SuccessFactors**: [hcm-eu10-sales.hr.cloud.sap](https://hcm-eu10-sales.hr.cloud.sap/login?company=SFSALES011701)
-- **SAP Ariba Buying**: [747176447-t.procurement-eu.ariba.com](https://747176447-t.procurement-eu.ariba.com)
-- **SAP Ariba Sourcing**: [747176447-t.sourcing-eu.ariba.com](https://747176447-t.sourcing-eu.ariba.com)
-
-If any system is missing, let your instructor know before continuing.
+Joule lists the SAP systems it is connected to. Confirm that S/4HANA and SuccessFactors appear. If any expected system is missing, let your instructor know before continuing.
 
 ## Your environment
 

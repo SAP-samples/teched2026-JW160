@@ -18,9 +18,9 @@ Link your HR identity to procurement activity:
 I am Engineering Manager in company 1710 with cost centre US10_RDGEN. Show me the purchase orders raised in company code 1710 from S/4HANA and tell me how many team members I have from SuccessFactors.
 ```
 
-Joule makes two API calls in parallel (one to S/4HANA for purchase orders, one to SuccessFactors for your team), then combines both into a single response. The result shows **62,952 purchase orders** in company 1710 (first 10 rows displayed, all Standard POs with supplier USSU-V100 under Purchasing Organisation 1710) and **0 direct reports** — the participant account (JW160 001) is a Specialist with no team members assigned in this demo environment.
+Joule makes two API calls in parallel — one to S/4HANA for purchase orders, one to SuccessFactors for your team — then combines both into a single response showing PO data and headcount side by side.
 
-![Joule response showing 62,296 POs in company 1710 and 41 team members listed](images/04_01_0010.png)
+![Joule response showing purchase orders from S/4HANA and team members from SuccessFactors combined](images/04_01_0010.png)
 
 ## Exercise 4.2 - Manager to procurement responsibility
 
@@ -30,11 +30,9 @@ Resolve a cost centre across both systems:
 Who in SuccessFactors is assigned to the Purchasing & Store cost centre (10101201 in S/4HANA)? And how many POs ran through that cost centre?
 ```
 
-Joule checks both systems and finds that cost centre 10101201 is labelled "Purch & Store 1 (DE)", a German legal entity cost centre. It has **11 active employees** in SuccessFactors (all in the Retail DE department), and **0 purchase orders** in S/4HANA. Joule flags a possible numbering mismatch and surfaces the closest match, **17101201 (Company Code 1710)**, which has **472 purchase orders** and offers to investigate further.
+Joule checks both systems and returns the number of active employees assigned to that cost centre in SuccessFactors along with the purchase order count from S/4HANA. If the cost centre numbering differs between the two systems, Joule flags the discrepancy and surfaces the closest match.
 
-This shows Joule reasoning across locale boundaries: the user asked about a DE cost centre, but the active procurement activity is under the US-prefixed cost centre 17101201.
-
-![Joule response showing cost centre 10101201 (DE) has 11 employees but no POs, and highlighting closest match 17101201 with 472 PO records](images/04_02_0010.png)
+![Joule response showing employee count and PO records for the specified cost centre across both systems](images/04_02_0010.png)
 
 ## Exercise 4.3 - Headcount vs. spend ratio
 
@@ -44,11 +42,11 @@ Ask Joule to do cross-system arithmetic:
 For company code 1710, compare the number of active employees (from SuccessFactors) to the number of purchase orders this month (from S/4HANA). What is the PO-per-employee ratio?
 ```
 
-Joule queries both systems in parallel and calculates the ratio. For company 1710: **2,430 active employees** (SuccessFactors) and **1,367 purchase orders** created so far in October 2026 (S/4HANA, 1–23 Oct), giving a **PO-per-employee ratio of 0.56** — roughly 1 PO for every 1.8 employees in the month to date.
+Joule queries both systems in parallel and calculates the ratio, providing a cross-system comparison table with active headcount, PO count for the month, and the resulting ratio.
 
-> **Note:** The PO count reflects orders created from 1 October to the date of the query, not a full month. Joule flags this in its response and projects the end-of-month total at ~1,840 POs assuming a linear creation pace of ~59 POs/day.
+> **Note:** The PO count reflects orders created up to the date of the query, not a full month. Joule flags this in its response.
 
-![Joule response showing cross-system table: 2,430 active employees from SuccessFactors, 1,367 POs from S/4HANA in October 2026, PO-per-employee ratio of 0.56](images/04_03_0010.png)
+![Joule response showing cross-system comparison of active employees and POs for company 1710 with a calculated ratio](images/04_03_0010.png)
 
 ## Exercise 4.4 - Talent and procurement
 
@@ -56,13 +54,9 @@ Joule queries both systems in parallel and calculates the ratio. For company 171
 Who are the top performers in the Procurement-related departments in SuccessFactors, and what purchase requisitions have those departments raised in S/4HANA?
 ```
 
-Joule identifies **9 procurement-related departments** with **39 active employees** across 7 of them. The largest is Procurement (US) with 15 employees (department 50300001), with senior staff including Rosa Villa (Procurement Manager) and William Blair (Service Procurement Manager). Denzel Coleman (Sourcing & Procurement Head) and Melissa Holmes (Purchasing Manager) are in the Auto-Sourcing & Procurement US department (50300344).
+Joule identifies procurement-related departments with their active employees and returns purchase requisition data from S/4HANA for the same departments. The response combines org data with procurement activity in one view.
 
-For purchase requisitions in S/4HANA, Joule finds **2,454 PR line items** in company 1710 under Purchasing Organisation 1710. These fall into two patterns: manually created PRs (linked to named requisitioners such as PURCHASER, FMARKS, CONTRACT_MGR) and MRP-generated PRs (today's date, Purchasing Group Z01, all BKS bike components for BestRun manufacturing).
-
-Performance ratings are not available in this tenant due to API permissions — Joule surfaces the most senior roles (Sourcing & Procurement Heads and Purchasing Managers) as a proxy for top performers. To unlock true performance rankings, SuccessFactors Calibration or Performance Form permissions would need to be enabled.
-
-![Joule response showing 9 procurement departments with 39 employees and 2,454 purchase requisition line items in two patterns](images/04_04_0010.png)
+![Joule response showing procurement departments from SuccessFactors alongside purchase requisition data from S/4HANA](images/04_04_0010.png)
 
 ## Exercise 4.5 - Org and finance alignment
 
@@ -70,11 +64,9 @@ Performance ratings are not available in this tenant due to API permissions — 
 Are there any active employees in SuccessFactors whose cost centre (US10_RDGEN) maps to a cost centre that exists in S/4HANA? List them side by side.
 ```
 
-Joule confirms that cost centre **US10_RDGEN** exists and is active in both systems. In S/4HANA it is labelled "R&D-General", belongs to Controlling Area A000 / Company Code 1710, profit centre US10_PC10, category L (Management), valid since 1950. In SuccessFactors the HR master label isn't returned but the code and company (1710) match.
+Joule confirms whether the cost centre exists and is active in both systems, then returns a side-by-side list of employees on that cost centre across the two platforms.
 
-The side-by-side employee list shows **86 active employees** on cost centre US10_RDGEN across 10 departments, ranging from VP Operations and VP R&D to Engineering Interns, Project Managers, and Field Service Technicians.
-
-![Joule response showing cost centre US10_RDGEN confirmed in both systems and employee list with 86 active staff](images/04_05_0010.png)
+![Joule response showing cost centre confirmed in both systems and a list of active employees](images/04_05_0010.png)
 
 ## Pro tip
 
