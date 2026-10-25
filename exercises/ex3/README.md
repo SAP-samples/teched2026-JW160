@@ -63,13 +63,13 @@ Start with yourself.
 
     ![Joule response showing performance review status](images/03_03_0010.png)
 
-2. Look at team goals:
+2. Look at your own goals:
     ```
-    What goals have been set for the Engineering department this year?
+    What are my current performance goals?
     ```
-    Joule queries the SuccessFactors Goals module for the Engineering department's active goal plans.
+    Joule queries the SuccessFactors Goals module and returns your active goal plans for the current review cycle.
 
-    ![Joule response showing Engineering department goals query](images/03_03_0020.png)
+    ![Joule response showing current performance goals](images/03_03_0020.png)
 
 ## Exercise 3.4 - Time and absence
 
