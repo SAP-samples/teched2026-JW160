@@ -2,7 +2,8 @@
 
 **Duration:** ~30 min | **Level:** Expert
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
 Skills are pre-built capability packs that extend what Joule can do. They connect Joule to additional systems, APIs, and domain knowledge beyond its built-in set. In this final exercise you'll upload a skill, activate it, and test it at the depth that fits your background.
 
@@ -48,7 +49,8 @@ Click **Import** in the top-right corner of the Explore Skills page.
 
 The **Import Skill** dialog opens. Drag your `SKILL.md` file onto the drop zone, or click **Choose File** to select it from your filesystem. The skill name and description are pre-filled from the file's YAML frontmatter.
 
-> **Security note:** Custom skills execute in a sandbox environment without external network connectivity.
+> [!NOTE]
+> Custom skills execute in a sandbox environment without external network connectivity.
 
 ![Import Skill dialog with Skill Name and Description fields, drop zone, Choose Folder and Choose File buttons, and security notice](images/10_03_0010.png)
 
@@ -90,19 +92,9 @@ Step 3: Test the skill
 What is our procurement health score for company 1710?
 ```
 
-Joule returns a RAG-coded scorecard with live data from S/4HANA and SuccessFactors compared against the configured thresholds. Expected results for this tenant:
+Joule returns a RAG-coded scorecard with live data from S/4HANA and SuccessFactors compared against the configured thresholds. Each KPI row shows the measured value, the Green threshold, and a colour status (🟢/🟡/🔴/ℹ️). KPIs that cannot be calculated with the available APIs are flagged as unavailable with an explanation. An interpretation section below the table explains what each status means in context.
 
-| KPI | Value | Status |
-|-----|-------|--------|
-| PO Accuracy | ~99% | 🟢 Green |
-| Procurement Savings Rate | — | 🔴 Red (unavailable via standard PO API) |
-| Active PO Ratio | ~2% | 🔴 Red (monthly new POs vs. cumulative base) |
-| Active Employees | ~4,000 | ℹ️ Info |
-| Engineering Managers | ~19 | ℹ️ Info |
-
-> **Note:** The Active PO Ratio appears Red because the threshold (85%) is calibrated for a short window (e.g. weekly new POs) but the metric is calculated against the tenant's full historical PO backlog. Joule's interpretation note explains this. Procurement Savings Rate is unavailable via the standard S/4HANA PO API and requires Ariba sourcing data.
-
-![Joule response showing the RAG-coded KPI Health Scorecard for Company 1710 with PO Accuracy at 99.3% Green, Active PO Ratio at 2.2% Red, and workforce data](images/10_06_0010.png)
+![Joule response showing the RAG-coded KPI Health Scorecard for Company 1710 with procurement and workforce KPIs colour-coded by status](images/10_06_0010.png)
 
 Step 4: Adjust a threshold
 
@@ -149,7 +141,8 @@ Build the KPI engine as a microservice and connect it to Joule via the A2A (Agen
 
 **Step 3: Register with Joule.** Register the agent via the A2A protocol and publish an Agent Card.
 
-> **Note:** Your Joule instance must be on schema version >= 3.28.0 for A2A support. Run `joule status` to confirm before you start.
+> [!IMPORTANT]
+> Your Joule instance must be on schema version >= 3.28.0 for A2A support. Run `joule status` to confirm before you start.
 
 **Step 4: Test end-to-end.**
 

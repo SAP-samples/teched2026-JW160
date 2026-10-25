@@ -2,11 +2,13 @@
 
 **Duration:** ~18 min | **Level:** Easy
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Public Cloud system across several business areas: purchasing, finance, sales, materials, and suppliers. Watch how Joule picks the right Fiori app or OData service for each question without you having to name one.
+In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Cloud Public Edition system across several business areas: purchasing, finance, sales, materials, and suppliers. Watch how Joule picks the right Fiori app or OData service for each question without you having to name one.
 
-> **Before you start:** Open **Explore Skills** and confirm that only **S/4HANA Public Cloud** is enabled. If you also see an **S/4HANA Private Cloud** skill, disable it — no private cloud system is connected in this workshop tenant and leaving it enabled can cause routing errors or unexpected failures.
+> [!IMPORTANT]
+> Open **Explore Skills** and confirm that only **SAP S/4HANA Cloud Public Edition** is enabled. If you also see an **SAP S/4HANA Cloud Private Edition** skill, disable it — no private cloud system is connected in this workshop tenant and leaving it enabled can cause routing errors or unexpected failures.
 
 ## Exercise 2.1 - Purchase orders
 
@@ -24,11 +26,12 @@ In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Public Cl
     ```
     Joule filters to the current month in the specified company code and returns a summary of matching purchase orders.
 
-    > **Note:** Asking across all company codes and all time periods can return a very large dataset and take several minutes. Scoping to a company code and date range keeps the response fast.
+    > [!NOTE]
+    > Asking across all company codes and all time periods can return a very large dataset and take several minutes. Scoping to a company code and date range keeps the response fast.
 
 3. Drill into a specific PO:
     ```
-    Drill into PO 4500101060 and show me its line items.
+    Drill into the first PO from the list above and show me its line items.
     ```
     Joule shows the PO header and a line-item table, all without switching apps.
 
@@ -42,7 +45,7 @@ In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Public Cl
     ```
     Joule retrieves the master data for this cost centre including its company code, controlling area, and other key attributes.
 
-    _Screenshot to be updated._
+    ![Joule response showing cost centre master data](images/02_02_0010.png)
 
 2. Get an overview of the cost centre landscape:
     ```
@@ -50,7 +53,8 @@ In this exercise you'll ask Joule to pull data from a real SAP S/4HANA Public Cl
     ```
     Joule returns the total count and a breakdown by company code — useful for understanding the scale of the cost centre hierarchy without listing every record.
 
-    > **Note:** Asking Joule to *list* all cost centres in a large controlling area can return hundreds of records and take several minutes. Asking for a count or summary instead returns the same insight in seconds.
+    > [!NOTE]
+    > Asking Joule to *list* all cost centres in a large controlling area can return hundreds of records and take several minutes. Asking for a count or summary instead returns the same insight in seconds.
 
 ## Exercise 2.3 - Finance, sales, and materials
 
@@ -62,7 +66,7 @@ Try each of these in turn:
     ```
     Joule searches across company codes and returns a summary of open invoices — top suppliers by outstanding amount, and the largest individual invoices.
 
-    _Screenshot to be updated._
+    ![Joule response showing open vendor invoices from last month](images/02_03_0010.png)
 
 2. Top sales orders:
     ```
@@ -70,7 +74,7 @@ Try each of these in turn:
     ```
     Joule ranks the top sales orders by value and returns a summary table.
 
-    _Screenshot to be updated._
+    ![Joule response showing top 5 sales orders by value](images/02_03_0020.png)
 
 3. Inventory check:
     ```
@@ -78,7 +82,7 @@ Try each of these in turn:
     ```
     Joule identifies the materials available at the specified plant.
 
-    _Screenshot to be updated._
+    ![Joule response showing inventory overview at plant 1710](images/02_03_0030.png)
 
 Each question pulls from a different Fiori app and OData service. Joule routes them automatically.
 
@@ -92,7 +96,7 @@ Tell me more about supplier 10300001. What's their address and VAT number?
 
 Joule returns the full supplier profile from the Business Partner service: name, address, and tax details.
 
-_Screenshot to be updated._
+![Joule response showing supplier master data for supplier 10300001](images/02_04_0010.png)
 
 ## Key takeaways
 

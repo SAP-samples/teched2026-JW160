@@ -2,9 +2,11 @@
 
 **Duration:** ~20 min | **Level:** Intermediate
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
 
 Joule creates files, not just answers. In this exercise you'll generate a Word document, a PDF, and an HTML dashboard from live SAP data, then refine the content through follow-up prompts.
 

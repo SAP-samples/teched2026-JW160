@@ -2,9 +2,11 @@
 
 **Duration:** ~25 min | **Level:** Advanced
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
 
 Joule can reach beyond your SAP landscape. In this exercise you ask it to pull industry benchmark data from the web and combine it with live SAP data to build an intelligence dashboard, the kind of view that would normally take a team hours to assemble.
 
@@ -32,7 +34,8 @@ Now compare our company's procurement activity from S/4HANA to those benchmarks.
 
 Joule queries S/4HANA and returns live figures for procurement KPIs, comparing each against the benchmarks from Step 1. The comparison shows where your company is in each benchmark tier, flags any gaps, and includes recommendations on which levers to prioritise.
 
-> **Note:** Some KPIs (such as procurement savings rate) may not be measurable if S/4HANA price variance analytics haven't been activated. Joule will flag this and use available signals as a proxy.
+> [!NOTE]
+> Some KPIs (such as procurement savings rate) may not be measurable if S/4HANA price variance analytics haven't been activated. Joule will flag this and use available signals as a proxy.
 
 ![Joule response showing procurement KPI comparison against industry benchmarks with a summary table and recommended actions](images/08_02_0010.png)
 
@@ -46,7 +49,8 @@ Add our Engineering Manager headcount from SuccessFactors and the industry bench
 
 Joule queries SuccessFactors and returns the Engineering Manager headcount globally, broken down by pay grade and country. It then compares US-based managers against the provided benchmark range, calculating each employee's position relative to the floor and median, and highlights any compensation gaps that may present retention risk.
 
-> **Note:** The benchmark applies directly only to US-based employees. International managers are paid in local currencies, so the US benchmark doesn't apply to them directly.
+> [!NOTE]
+> The benchmark applies directly only to US-based employees. International managers are paid in local currencies, so the US benchmark doesn't apply to them directly.
 
 ![Joule response showing Engineering Manager headcount from SuccessFactors with pay grade distribution and US salary comparison against the benchmark range](images/08_03_0010.png)
 

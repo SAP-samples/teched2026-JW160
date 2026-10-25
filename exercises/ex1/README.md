@@ -2,9 +2,11 @@
 
 **Duration:** ~8 min | **Level:** Beginner
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet. Without it, Joule will route prompts through documentation search instead of your live SAP systems.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet. Without it, Joule will route prompts through documentation search instead of your live SAP systems.
 
 Before touching any SAP data, spend a few minutes talking to Joule about itself. The goal is to get a feel for how it communicates, what it can and can't do, and how it handles follow-up questions. No SAP knowledge needed.
 
@@ -52,7 +54,7 @@ Knowing what Joule *can't* do is just as useful as knowing what it can.
     ```
     Can you do a quick calculation for me? If we raised 47 POs at an average value of $12,400 each, what is the total spend?
     ```
-    Expected answer: **$582,800**
+    Joule calculates the result directly.
 
     ![Joule calculation result showing total spend for 47 purchase orders](images/01_calculation.png)
 

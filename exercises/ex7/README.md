@@ -2,15 +2,18 @@
 
 **Duration:** ~30 min | **Level:** Advanced
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking).
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking).
 >
-> **Skills required:** `s4hana-public-cloud`, `ariba-buyer`, `ariba-sourcing`, `successfactors-hr`, `docx`. Enable all five in Explore Skills before starting.
+> **Skills required:** `SAP S/4HANA Cloud Public Edition`, `SAP Ariba Buying`, `SAP Ariba Sourcing`, `SAP SuccessFactors HCM`, `Word Documents`. Enable all five in Explore Skills before starting.
 
-> **Ariba connectivity note:** The `ariba-buyer` and `ariba-sourcing` skills require a live Ariba backend. In some workshop tenants, Ariba connectivity may not be available. If Step 2 only returns S/4HANA results, that is expected — Steps 1, 3, 4, and 5 will still work. Ask your instructor if you're unsure.
+> [!NOTE]
+> The `SAP Ariba Buying` and `SAP Ariba Sourcing` skills require a live Ariba backend. In some workshop tenants, Ariba connectivity may not be available. If Step 2 only returns S/4HANA results, that is expected — Steps 1, 3, 4, and 5 will still work. Ask your instructor if you're unsure.
 
-This exercise chains everything together: live S/4HANA data, contract coverage, a file cross-reference, SuccessFactors HR data, and a generated Word document, all in one conversation. It mirrors a real quarterly procurement review.
+This exercise chains everything together: live S/4HANA data, contract coverage, a file cross-reference, SAP SuccessFactors HCM data, and a generated Word document, all in one conversation. It mirrors a real quarterly procurement review.
 
 Work through the five prompts in order, in the same Joule conversation. Don't start a new chat between steps — Joule carries context forward so each step builds on the last.
 
@@ -30,7 +33,8 @@ Joule queries S/4HANA purchase orders for the current quarter and returns a rank
 For each of those suppliers, show me if we have an active contract.
 ```
 
-> **Allow 10–15 minutes for this step.** Joule checks each supplier individually against S/4HANA purchase contracts (and SAP Ariba strategic contracts, if connected). With 10 suppliers to check, this takes longer than the other steps.
+> [!NOTE]
+> Allow 10–15 minutes for this step. Joule checks each supplier individually against S/4HANA purchase contracts (and SAP Ariba strategic contracts, if connected). With 10 suppliers to check, this takes longer than the other steps.
 
 Joule adds a contract status column to the supplier list. If none of the high-spend suppliers have active contracts, Joule flags this as a risk finding and summarises how much spend is going through without contract coverage. It may also suggest checking additional systems for contracts not yet visible in S/4HANA.
 
@@ -54,7 +58,7 @@ Joule checks both by SAP Vendor ID and by company name, including partial matchi
 Who are the purchasing managers or buyers responsible for these suppliers? Look in SuccessFactors for employees in the Procurement department.
 ```
 
-Joule queries SuccessFactors HR and returns a procurement team directory organised by role level, including names, titles, departments, and email addresses. SuccessFactors holds the team structure but not a supplier-to-buyer mapping, so Joule returns the full procurement directory and highlights the roles most relevant to the contract gap identified in Step 2.
+Joule queries SAP SuccessFactors HCM and returns a procurement team directory organised by role level, including names, titles, departments, and email addresses. SAP SuccessFactors HCM holds the team structure but not a supplier-to-buyer mapping, so Joule returns the full procurement directory and highlights the roles most relevant to the contract gap identified in Step 2.
 
 ![Joule response showing procurement professionals from SuccessFactors organised by role level with contact details](images/07_04_0010.png)
 
@@ -73,7 +77,7 @@ Click the document link in Joule's response to download the file.
 ## What to notice
 
 - Joule carries context from step to step — you never need to re-specify the supplier list or company code.
-- Each step adds a new data layer: S/4HANA, contract records, an uploaded file, SuccessFactors HR, and a generated document.
+- Each step adds a new data layer: S/4HANA, contract records, an uploaded file, SAP SuccessFactors HCM, and a generated document.
 - The Word document draws on everything in the conversation, not just the last prompt.
 - The combined risk pattern emerged from combining three separate data sources. No single step would have revealed it on its own.
 

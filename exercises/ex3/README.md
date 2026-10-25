@@ -2,9 +2,11 @@
 
 **Duration:** ~18 min | **Level:** Easy
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
 
 SAP SuccessFactors covers employee records, org structure, headcount, performance, goals, leave, and recruiting. In this exercise you'll ask Joule to retrieve all of it through conversation, without opening the SuccessFactors interface.
 
@@ -18,7 +20,7 @@ Start with yourself.
     ```
     Joule identifies your user account automatically and returns your profile from SuccessFactors, including your job title and assigned cost centre.
 
-    _Screenshot to be updated._
+    ![Joule response showing job title and cost centre from SuccessFactors](images/03_01_0010.png)
 
 2. Check your reporting line:
     ```
@@ -36,7 +38,7 @@ Start with yourself.
     ```
     Joule searches the org structure and returns the number of active employees in the Manufacturing division.
 
-    ![Joule response showing employee count in the Manufacturing division](images/03_02_0010.png)
+    ![Joule response showing employee headcount for the Manufacturing division](images/03_02_0010.png)
 
 2. Get a headcount breakdown by division:
     ```
@@ -44,7 +46,7 @@ Start with yourself.
     ```
     Company 1710 has a large active headcount. Because listing every employee individually would be unwieldy, Joule returns a summary and offers to filter further by division, department, or job title.
 
-    _Screenshot to be updated._
+    ![Joule response showing employee list for company 1710](images/03_02_0020.png)
 
 ## Exercise 3.3 - Performance and goals
 
@@ -60,9 +62,9 @@ Start with yourself.
     ```
     What goals have been set for the Engineering department this year?
     ```
-    Joule identifies Engineering department employees globally and retrieves their active goal plans for the year.
+    Joule queries the SuccessFactors Goals module for the Engineering department's active goal plans.
 
-    _Screenshot to be updated._
+    ![Joule response showing Engineering department goals query](images/03_03_0020.png)
 
 ## Exercise 3.4 - Time and absence
 
@@ -74,7 +76,8 @@ How many days of leave does the team have remaining this year?
 
 Joule retrieves leave balances for the team and returns a summary: team size, leave type, balance per employee, and total remaining days.
 
-> **Note:** The leave data reflects the primary vacation leave account. Other leave types such as sick leave and time in lieu are tracked separately in the system.
+> [!NOTE]
+> The leave data reflects the primary vacation leave account. Other leave types such as sick leave and time in lieu are tracked separately in the system.
 
 ![Joule response showing team leave balance summary](images/03_04_0010.png)
 
@@ -88,13 +91,13 @@ Are there any open job requisitions in my department?
 
 Joule queries the SuccessFactors Recruiting module and returns the open requisitions visible for your department.
 
-_Screenshot to be updated._
+![Joule response showing open job requisitions query result](images/03_05_0010.png)
 
 ## Key takeaways
 
 | What you observed | What it means |
 |---|---|
-| Profile and org data returned immediately | SuccessFactors HR data is live, with no data copy or cache |
+| Profile and org data returned immediately | SAP SuccessFactors HCM data is live, with no data copy or cache |
 | Headcount and leave data aggregated in one query | Joule can aggregate team data across large headcounts in a single query |
 | Performance and goals accessible through conversation | No need to navigate SuccessFactors menus to retrieve structured HR data |
 

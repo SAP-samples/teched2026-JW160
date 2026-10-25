@@ -2,9 +2,11 @@
 
 **Duration:** ~25 min | **Level:** Intermediate
 
-> **Note:** Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
+> [!NOTE]
+> Screenshots were taken on a shared demo environment. The exact values, names, and counts in your session will differ — that is expected.
 
-> **Prerequisite:** Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
+> [!IMPORTANT]
+> Make sure **Agentic Thinking** is enabled before you start. See [Exercise 0: Enable Agentic Thinking](../ex0/README.md#enable-agentic-thinking) if you haven't done this yet.
 
 Joule can combine data from SAP S/4HANA and SuccessFactors in a single answer. This exercise runs five scenarios that cross the ERP/HR boundary.
 
@@ -44,7 +46,8 @@ For company code 1710, compare the number of active employees (from SuccessFacto
 
 Joule queries both systems in parallel and calculates the ratio, providing a cross-system comparison table with active headcount, PO count for the month, and the resulting ratio.
 
-> **Note:** The PO count reflects orders created up to the date of the query, not a full month. Joule flags this in its response.
+> [!NOTE]
+> The PO count reflects orders created up to the date of the query, not a full month. Joule flags this in its response.
 
 ![Joule response showing cross-system comparison of active employees and POs for company 1710 with a calculated ratio](images/04_03_0010.png)
 
