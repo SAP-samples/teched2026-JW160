@@ -61,11 +61,15 @@ Start with yourself.
     ```
     Joule queries the SuccessFactors Performance module and returns the current status of active review cycles.
 
+    ![Joule response showing performance review status](images/03_03_0010.png)
+
 2. Look at your own goals:
     ```
     What are my current performance goals?
     ```
     Joule queries the SuccessFactors Goals module and returns your active goal plans for the current review cycle.
+
+    ![Joule response showing current performance goals](images/03_03_0020.png)
 
 ## Exercise 3.4 - Time and absence
 
@@ -91,6 +95,8 @@ Are there any open job requisitions in my department?
 ```
 
 Joule queries the SuccessFactors Recruiting module and returns the open requisitions visible for your department.
+
+![Joule response showing open job requisitions query result](images/03_05_0010.png)
 
 ## Key takeaways
 
